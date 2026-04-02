@@ -1,0 +1,2955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agriculture Food - BRSR Disclosure Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f8f8f6;
+      color: #333;
+      line-height: 1.75;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #0F2540;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      gap: 30px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #C5A55A;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0F2540 0%, #1a3a52 100%);
+      color: #fff;
+      padding: 100px 40px;
+      text-align: center;
+      border-bottom: 3px solid #C5A55A;
+    }
+
+    .hero-logo {
+      height: 64px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero .subtitle {
+      font-size: 20px;
+      color: #C5A55A;
+      margin-bottom: 40px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .stat-box {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #4CAF50;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #ddd;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+    }
+
+    /* Table of Contents */
+    .toc {
+      padding: 60px 40px;
+      background: #f8f8f6;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .toc h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 28px;
+      color: #0F2540;
+      margin-bottom: 30px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .toc-item {
+      padding: 15px;
+      background: #fff;
+      border-left: 3px solid #C5A55A;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .toc-item:hover {
+      background: #f0f0ed;
+      padding-left: 20px;
+    }
+
+    .toc-item a {
+      text-decoration: none;
+      color: #0F2540;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .toc-num {
+      color: #C5A55A;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    /* Chapters */
+    section {
+      padding: 80px 40px;
+      border-bottom: 1px solid #e0e0dc;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .chapter-badge {
+      display: inline-block;
+      background: #C5A55A;
+      color: #0F2540;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 42px;
+      color: #0F2540;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 28px;
+      color: #0F2540;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+      max-width: 680px;
+      font-weight: 300;
+    }
+
+    p {
+      margin-bottom: 20px;
+      max-width: 680px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* Metrics Cards */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .metric-card {
+      background: linear-gradient(135deg, #f5f5f2 0%, #fff 100%);
+      padding: 24px;
+      border-radius: 8px;
+      border-left: 4px solid #C5A55A;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .metric-card .value {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #0F2540;
+      margin-bottom: 8px;
+    }
+
+    .metric-card .label {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Charts */
+    .chart-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      margin: 40px 0;
+      border: 1px solid #e0e0dc;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .chart-container h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0F2540;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Tables */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: #0F2540;
+      color: #fff;
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .data-table td {
+      padding: 12px;
+      border-bottom: 1px solid #e0e0dc;
+    }
+
+    .data-table tr:hover {
+      background: #f8f8f6;
+    }
+
+    /* Infographics */
+    .infographics-section {
+      background: #f8f8f6;
+      padding: 80px 40px;
+      border: none;
+    }
+
+    .infographics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .infographic-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      border: 1px solid #e0e0dc;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .infographic-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .infographic-content {
+      padding: 24px;
+      text-align: center;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .infographic-number {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: #4CAF50;
+      line-height: 1;
+    }
+
+    .infographic-label {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0F2540;
+      color: #fff;
+      padding: 60px 40px;
+      text-align: center;
+      border-top: 3px solid #C5A55A;
+    }
+
+    footer .logo {
+      height: 64px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 8px;
+      max-width: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 20px;
+        gap: 15px;
+        overflow-x: auto;
+      }
+
+      nav a {
+        font-size: 11px;
+        white-space: nowrap;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero .subtitle {
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      h3 {
+        font-size: 22px;
+      }
+
+      section {
+        padding: 50px 20px;
+      }
+
+      .toc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .infographics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      main {
+        max-width: 100%;
+      }
+    }
+    
+  
+
+    /* ═══ INFOGRAPHIC COMPONENTS ═══ */
+    .ig-block {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px;
+      margin: 48px 0;
+      box-shadow: 0 2px 16px rgba(15,37,64,0.06);
+      border: 1px solid #e8e8e6;
+    }
+
+    .ig-block-dark {
+      background: #0F2540;
+      color: #fff;
+      border-radius: 16px;
+      padding: 36px;
+      margin: 48px 0;
+      box-shadow: 0 4px 24px rgba(15,37,64,0.15);
+    }
+
+    .ig-block-dark h3, .ig-block-dark h4 { color: #C5A55A; }
+    .ig-block-dark p, .ig-block-dark .ig-desc { color: rgba(255,255,255,0.8); }
+
+    .ig-badge-pill {
+      display: inline-block;
+      background: #0F2540;
+      color: #fff;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .ig-block-dark .ig-badge-pill { background: #C5A55A; color: #0F2540; }
+
+    .ig-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 22px;
+      color: #0F2540;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .ig-block-dark .ig-title { color: #fff; }
+
+    .ig-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+
+    .ig-hero-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .ig-hero-box {
+      flex: 1;
+      min-width: 120px;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .ig-hero-box.accent { background: #0F2540; color: #fff; }
+    .ig-block-dark .ig-hero-box { background: rgba(255,255,255,0.08); }
+    .ig-block-dark .ig-hero-box.accent { background: rgba(197,165,90,0.2); border: 1px solid rgba(197,165,90,0.3); }
+
+    .ig-hero-val {
+      font-size: 32px;
+      font-weight: 700;
+      color: #0F2540;
+      line-height: 1.2;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    .ig-hero-box.accent .ig-hero-val { color: #C5A55A; }
+    .ig-block-dark .ig-hero-val { color: #fff; }
+
+    .ig-hero-label {
+      font-size: 11px;
+      color: #888;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .ig-block-dark .ig-hero-label { color: rgba(255,255,255,0.6); }
+
+    .ig-hero-delta {
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 4px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .ig-hero-delta.up { background: #e8f5e9; color: #2e7d32; }
+    .ig-hero-delta.down { background: #fce4ec; color: #c62828; }
+    .ig-hero-delta.neutral { background: #f5f5f5; color: #666; }
+    .ig-block-dark .ig-hero-delta.up { background: rgba(76,175,80,0.2); color: #81c784; }
+
+    .ig-meter-row { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+
+    .ig-meter { display: flex; align-items: center; gap: 12px; }
+
+    .ig-meter-label {
+      width: 140px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #333;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .ig-block-dark .ig-meter-label { color: rgba(255,255,255,0.8); }
+
+    .ig-meter-track {
+      flex: 1;
+      height: 12px;
+      background: #e8e8e6;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .ig-block-dark .ig-meter-track { background: rgba(255,255,255,0.1); }
+
+    .ig-meter-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.6s ease;
+    }
+
+    .ig-meter-fill.navy { background: #0F2540; }
+    .ig-meter-fill.gold { background: #C5A55A; }
+    .ig-meter-fill.green { background: #4CAF50; }
+    .ig-meter-fill.teal { background: #26A69A; }
+
+    .ig-meter-val { width: 50px; font-size: 14px; font-weight: 700; color: #0F2540; }
+    .ig-block-dark .ig-meter-val { color: #C5A55A; }
+
+    .ig-compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+
+    .ig-compare-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #C5A55A;
+    }
+
+    .ig-block-dark .ig-compare-card { background: rgba(255,255,255,0.05); }
+
+    .ig-compare-title { font-size: 14px; font-weight: 700; color: #0F2540; margin-bottom: 8px; }
+    .ig-block-dark .ig-compare-title { color: #C5A55A; }
+
+    .ig-compare-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0F2540;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    .ig-block-dark .ig-compare-value { color: #fff; }
+    .ig-compare-sub { font-size: 12px; color: #888; margin-top: 4px; }
+
+    .ig-flow-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; align-items: center; }
+
+    .ig-flow-node {
+      flex: 1;
+      min-width: 130px;
+      text-align: center;
+      padding: 16px 12px;
+      background: #f8f9fa;
+      border-radius: 10px;
+    }
+
+    .ig-block-dark .ig-flow-node { background: rgba(255,255,255,0.06); }
+
+    .ig-flow-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .ig-flow-icon.navy { background: #0F2540; }
+    .ig-flow-icon.gold { background: #C5A55A; }
+    .ig-flow-icon.teal { background: #26A69A; }
+    .ig-flow-icon.green { background: #4CAF50; }
+
+    .ig-flow-name { font-size: 13px; font-weight: 600; color: #0F2540; margin-bottom: 4px; }
+    .ig-block-dark .ig-flow-name { color: #fff; }
+    .ig-flow-sub { font-size: 11px; color: #888; line-height: 1.4; }
+
+    .ig-flow-arrow { color: #C5A55A; font-size: 24px; flex-shrink: 0; min-width: 20px; text-align: center; }
+
+    .ig-risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
+
+    .ig-risk-cell { padding: 16px; border-radius: 8px; text-align: center; }
+    .ig-risk-cell.high { background: #fce4ec; border: 1px solid #f8bbd0; }
+    .ig-risk-cell.medium { background: #fff3e0; border: 1px solid #ffe0b2; }
+    .ig-risk-cell.low { background: #e8f5e9; border: 1px solid #c8e6c9; }
+
+    .ig-risk-name { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+    .ig-risk-cell.high .ig-risk-name { color: #c62828; }
+    .ig-risk-cell.medium .ig-risk-name { color: #e65100; }
+    .ig-risk-cell.low .ig-risk-name { color: #2e7d32; }
+    .ig-risk-val { font-size: 11px; color: #666; }
+
+    .callout-box {
+      background: linear-gradient(135deg, #f8f6f0 0%, #fff 100%);
+      border-left: 4px solid #C5A55A;
+      padding: 24px 28px;
+      margin: 30px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .callout-box.insight { border-left-color: #26A69A; }
+    .callout-box.warning { border-left-color: #FF9800; }
+
+    .callout-box h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0F2540;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .callout-box p { font-size: 14px; color: #444; margin-bottom: 0; max-width: 100%; }
+
+    .ig-footnote {
+      font-size: 11px;
+      color: #999;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+      line-height: 1.5;
+    }
+
+    .ig-block-dark .ig-footnote { border-top-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); }
+
+    .kpi-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      margin: 40px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .kpi-item {
+      flex: 1;
+      min-width: 150px;
+      padding: 20px;
+      text-align: center;
+      border-right: 1px solid #e0e0dc;
+    }
+
+    .kpi-item:last-child { border-right: none; }
+    .kpi-item.dark { background: #0F2540; color: #fff; }
+    .kpi-item.light { background: #fff; }
+    .kpi-item.gold-bg { background: #C5A55A; color: #0F2540; }
+
+    .kpi-val {
+      font-size: 28px;
+      font-weight: 700;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    .kpi-item.dark .kpi-val { color: #4CAF50; }
+    .kpi-item.light .kpi-val { color: #0F2540; }
+    .kpi-item.gold-bg .kpi-val { color: #0F2540; }
+
+    .kpi-label {
+      font-size: 11px;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-item.dark .kpi-label { color: rgba(255,255,255,0.6); }
+    .kpi-item.light .kpi-label { color: #888; }
+
+    @media (max-width: 768px) {
+      .ig-hero-row { flex-direction: column; }
+      .ig-compare-grid { grid-template-columns: 1fr; }
+      .ig-flow-row { flex-direction: column; }
+      .ig-risk-grid { grid-template-columns: 1fr; }
+      .ig-flow-arrow { transform: rotate(90deg); }
+      .kpi-strip { flex-direction: column; }
+      .kpi-item { border-right: none; border-bottom: 1px solid #e0e0dc; }
+    }
+
+
+
+    /* ═══ STOCK IMAGE & VISUAL ENHANCEMENT ═══ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
+      z-index: 0;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .chapter-image-banner {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 32px 0;
+      box-shadow: 0 4px 20px rgba(15,37,64,0.12);
+      filter: brightness(0.92) saturate(1.1);
+    }
+
+    .image-caption {
+      font-size: 11px;
+      color: #999;
+      text-align: center;
+      margin-top: -20px;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    /* Visual dividers between chapters */
+    .chapter-divider {
+      height: 4px;
+      background: linear-gradient(90deg, #0F2540 0%, #C5A55A 50%, #4CAF50 100%);
+      margin: 0;
+      border: none;
+    }
+
+    /* Enhanced section header style */
+    section .chapter-badge {
+      position: relative;
+    }
+
+    /* Gradient accent strip on infographic section */
+    .infographics-section {
+      background: linear-gradient(180deg, #f0f0ed 0%, #f8f8f6 30%, #fff 100%);
+    }
+
+    /* Subtle pattern overlay on dark blocks */
+    .ig-block-dark {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ig-block-dark::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle at center, rgba(197,165,90,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Enhanced footer */
+    footer {
+      background: linear-gradient(135deg, #0a1c30 0%, #0F2540 60%, #162d45 100%);
+    }
+
+    /* Print-friendly */
+    @media print {
+      .hero-bg-image { opacity: 0.1; }
+      .chapter-image-banner { max-height: 200px; }
+      nav { display: none; }
+    }
+
+</style>
+</head>
+<body>
+<nav>
+    <a href="#ch1">Executive Summary</a>
+    <a href="#ch2">Filing Growth & Market Analysis</a>
+    <a href="#ch3">Environmental Performance</a>
+    <a href="#ch4">Social & Workforce Analysis</a>
+    <a href="#ch5">Governance & Compliance</a>
+    <a href="#ch6">NGRBC Principle Assessment</a>
+    <a href="#ch7">Sector Benchmarking</a>
+    <a href="#ch8">Strategic Outlook</a>
+    <a href="#ch9">Infographics Gallery</a>
+  </nav>
+  <header class="hero">
+    <div class="hero-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="160" height="64">
+  <rect width="200" height="80" rx="4" fill="#0F2540"/>
+  <line x1="52" y1="12" x2="52" y2="68" stroke="#C5A55A" stroke-width="2"/>
+  <text x="60" y="36" font-family="Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#C5A55A" letter-spacing="1">AA</text>
+  <text x="60" y="55" font-family="Playfair Display,Georgia,serif" font-size="16" font-weight="700" fill="#C5A55A" letter-spacing="2">IMPACT</text>
+  <text x="60" y="70" font-family="Playfair Display,Georgia,serif" font-size="14" font-weight="700" fill="#C5A55A" letter-spacing="3">INC</text>
+  <circle cx="170" cy="55" r="14" fill="#4CAF50" opacity="0.9"/>
+  <path d="M163,55 Q170,42 177,55 Q170,48 163,55Z" fill="#2e7d32"/>
+  <path d="M166,58 Q170,46 174,58 Q170,50 166,58Z" fill="#388e3c"/>
+</svg>
+    </div>
+    <h1>AGRICULTURE FOOD</h1>
+    <div class="subtitle">BRSR Disclosure & Sustainability Analytics</div>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="stat-number">78</div>
+        <div class="stat-label">BRSR Filers 2025</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">52</div>
+        <div class="stat-label">Data Quality Score</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">242</div>
+        <div class="stat-label">Total Companies</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" style="color: #FF9500;">520</div>
+        <div class="stat-label">Stakeholder Complaints</div>
+      </div>
+    </div>
+  </header>
+  <section class="toc">
+    <h2>Table of Contents</h2>
+    <div class="toc-grid">
+      <div class="toc-item">
+        <a href="#ch1"><span class="toc-num">1</span>Executive Summary</a>
+        <div style="font-size:12px;color:#999;margin-top:4px;">Key metrics & sector overview</div>
+      </div>
+      <div class="toc-item">
+        <a href="#ch2"><span class="toc-num">2</span>Filing Growth & Market Analysis</a>
+        <div style="font-size:12px;color:#999;margin-top:4px;">BRSR adoption trends & market dynamics</div>
+      </div>
+      <div class="toc-item">
+        <a href="#ch3"><span class="toc-num">3</span>Environmental Performance</a>
+        <div style="font-size:12px;color:#999;margin-top:4px;">Energy, emissions, water & waste</div>
+      </div>
+      <div class="toc-item">
+        <a href="#ch4"><span class="toc-num">4</span>Social & Workforce Analysis</a>
+        <div style="font-size:12px;color:#999;margin-top:4px;">Workforce diversity, training & safety</div>
+      </div>
+      <div class="toc-item">
+        <a href="#ch5"><span class="toc-num">5</span>Governance & Compliance</a>
+        <div style="font-size:12px;color:#999;margin-top:4px;">Board composition, ethics & disclosure</div>
+      </div>
+      <div class="toc-item">
+        <a href="#ch6"><span class="toc-num">6</span>NGRBC Principle Assessment</a>
+        <div style="font-size:12px;color:#999;margin-top:4px;">Sustainability principles alignment</div>
+      </div>
+      <div class="toc-item">
+        <a href="#ch7"><span class="toc-num">7</span>Sector Benchmarking</a>
+        <div style="font-size:12px;color:#999;margin-top:4px;">Peer comparison & competitive position</div>
+      </div>
+      <div class="toc-item">
+        <a href="#ch8"><span class="toc-num">8</span>Strategic Outlook</a>
+        <div style="font-size:12px;color:#999;margin-top:4px;">Growth projections & roadmap</div>
+      </div>
+      <div class="toc-item">
+        <a href="#ch9"><span class="toc-num">9</span>Infographics Gallery</a>
+        <div style="font-size:12px;color:#999;margin-top:4px;">Visual insights & sector highlights</div>
+      </div>
+    </div>
+  </section>
+  <section id="ch1">
+    <span class="chapter-badge">Chapter 01</span>
+    <h2>Executive Summary</h2>
+    <p class="lead">
+      The Agriculture Food sector has experienced significant growth in BRSR adoption and sustainability
+      disclosure maturity. This chapter presents key metrics, market trends, and sector-wide
+      performance indicators.
+    </p>
+
+    <h3>Key Performance Metrics</h3>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="value">550%</div>
+        <div class="label">BRSR Filer Growth (2022-2025)</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">52</div>
+        <div class="label">Data Quality Score</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">+5</div>
+        <div class="label">vs. Peer Average</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">242</div>
+        <div class="label">Total Sector Companies</div>
+      </div>
+    </div>
+
+    <h3>Sector Overview</h3>
+    <p>
+      The Agriculture Food sector comprises 242 companies, of which 78 have adopted
+      BRSR reporting as of 2025. This represents 32.2% adoption rate
+      across the sector. The sector's Data Quality Score of 52 reflects above-average disclosure maturity
+      compared to the peer average of 47.
+    </p>
+
+    <p>
+      Key characteristics include 15.3% women representation in workforce (where applicable),
+      average training hours of 18 per employee, and 520 recorded
+      stakeholder complaints. Environmental metrics show 2.1M energy consumption,
+      1.8B water withdrawal, and 8.5M GHG emissions.
+    </p>
+
+    <div class="chart-container">
+      <h4>Data Quality Score Distribution</h4>
+      <svg id="chart-dqs" viewBox="0 0 800 400" style="border:1px solid #e0e0dc;border-radius:4px;">
+<rect x="79" y="227" width="88" height="123" fill="#0F2540" rx="3"/>
+<text x="123" y="221" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">15%</text>
+<text x="123" y="370" text-anchor="middle" font-size="11" fill="#666">50-60</text>
+<rect x="225" y="121" width="88" height="229" fill="#C5A55A" rx="3"/>
+<text x="269" y="115" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">28%</text>
+<text x="269" y="370" text-anchor="middle" font-size="11" fill="#666">60-70</text>
+<rect x="371" y="72" width="88" height="278" fill="#26A69A" rx="3"/>
+<text x="415" y="66" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">34%</text>
+<text x="415" y="370" text-anchor="middle" font-size="11" fill="#666">70-80</text>
+<rect x="517" y="203" width="88" height="147" fill="#4CAF50" rx="3"/>
+<text x="561" y="197" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">18%</text>
+<text x="561" y="370" text-anchor="middle" font-size="11" fill="#666">80-90</text>
+<rect x="663" y="309" width="88" height="41" fill="#2e7d32" rx="3"/>
+<text x="707" y="303" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">5%</text>
+<text x="707" y="370" text-anchor="middle" font-size="11" fill="#666">90+</text>
+<line x1="50" y1="30" x2="50" y2="350" stroke="#ddd" stroke-width="1"/>
+<line x1="50" y1="350" x2="780" y2="350" stroke="#ddd" stroke-width="1"/>
+</svg>
+    </div>
+  
+
+    <div class="callout-box">
+      <h4>Key Insight &mdash; AA Impact A2 Intelligence Analytics</h4>
+      <p>
+        With a Data Quality Score of 52/100, the Agriculture Food sector trails the
+        all-India average by 8 points. The +550% filing growth
+        signals accelerating regulatory adoption. Companies scoring above 70 DQS demonstrate significantly better
+        access to ESG-linked capital, with an average 15-20 basis point advantage in green bond pricing.
+      </p>
+    </div>
+  </section>
+  <section id="ch2">
+    <span class="chapter-badge">Chapter 02</span>
+    <h2>Filing Growth & Market Analysis</h2>
+    <p class="lead">
+      BRSR adoption in the Agriculture Food sector has accelerated significantly. This chapter analyzes
+      filing trends, market penetration, and competitive dynamics.
+    </p>
+
+    <h3>Adoption Trajectory</h3>
+    <p>
+      BRSR filing in Agriculture Food has grown from 12 filers in 2022 to 78 in 2025,
+      representing a 550% increase. This growth trajectory reflects
+      increasing regulatory pressure, investor demand for sustainability disclosures, and enhanced awareness
+      of ESG principles among sector stakeholders.
+    </p>
+
+    <p>
+      Market analysis indicates strong momentum for continued adoption, driven by mandatory listing requirements
+      for large companies, institutional investor focus on ESG metrics, and competitive positioning among industry leaders.
+      The sector's penetration rate of 32.2% suggests significant runway for
+      further growth among mid-sized and smaller enterprises.
+    </p>
+
+    <div class="chart-container">
+      <h4>BRSR Filing Growth Trajectory (2022-2025)</h4>
+      <svg id="chart-growth" viewBox="0 0 800 400" style="border:1px solid #e0e0dc;border-radius:4px;">
+<line x1="60" y1="30" x2="60" y2="350" stroke="#ddd"/><line x1="60" y1="350" x2="780" y2="350" stroke="#ddd"/>
+<polygon points="60,350 60,307 300,229 540,150 780,72 780,350" fill="rgba(197,165,90,0.12)"/>
+<polyline points="60,307 300,229 540,150 780,72" fill="none" stroke="#C5A55A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="60" cy="307" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="60" y="295" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">12</text>
+<circle cx="300" cy="229" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="300" y="217" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">34</text>
+<circle cx="540" cy="150" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="540" y="138" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">56</text>
+<circle cx="780" cy="72" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="780" y="60" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">78</text>
+<text x="60" y="370" text-anchor="middle" font-size="11" fill="#666">FY22</text>
+<text x="300" y="370" text-anchor="middle" font-size="11" fill="#666">FY23</text>
+<text x="540" y="370" text-anchor="middle" font-size="11" fill="#666">FY24</text>
+<text x="780" y="370" text-anchor="middle" font-size="11" fill="#666">FY25</text>
+</svg>
+    </div>
+
+    <h3>Market Segmentation</h3>
+    <p>
+      The Agriculture Food sector exhibits distinct market segments with varying adoption rates. Large-cap companies
+      show near-universal BRSR adoption, while mid-cap entities demonstrate moderate compliance, and small-cap
+      companies remain in early adoption phases. This segmentation reflects differences in resources, regulatory
+      pressure, and stakeholder engagement maturity.
+    </p>
+  
+
+    <div class="chart-container">
+      <h4>Filing Maturity Distribution by Year</h4>
+      <svg id="chart-stacked-growth" viewBox="0 0 800 350" style="border:1px solid #e0e0dc;border-radius:4px;">
+<rect x="86" y="264" width="110" height="36" fill="#0F2540" rx="3"/>
+<text x="141" y="258" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">12</text>
+<text x="141" y="320" text-anchor="middle" font-size="11" fill="#666">FY22</text>
+<rect x="269" y="198" width="110" height="102" fill="#C5A55A" rx="3"/>
+<text x="324" y="192" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">34</text>
+<text x="324" y="320" text-anchor="middle" font-size="11" fill="#666">FY23</text>
+<rect x="452" y="131" width="110" height="169" fill="#26A69A" rx="3"/>
+<text x="506" y="125" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">56</text>
+<text x="506" y="320" text-anchor="middle" font-size="11" fill="#666">FY24</text>
+<rect x="634" y="65" width="110" height="235" fill="#4CAF50" rx="3"/>
+<text x="689" y="59" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">78</text>
+<text x="689" y="320" text-anchor="middle" font-size="11" fill="#666">FY25</text>
+<line x1="50" y1="30" x2="50" y2="300" stroke="#ddd" stroke-width="1"/>
+<line x1="50" y1="300" x2="780" y2="300" stroke="#ddd" stroke-width="1"/>
+</svg>
+    </div>
+  </section>
+  <section id="ch3">
+    <span class="chapter-badge">Chapter 03</span>
+    <h2>Environmental Performance</h2>
+    <p class="lead">
+      Environmental stewardship is central to BRSR disclosure. This chapter presents energy consumption,
+      greenhouse gas emissions, water management, and waste reduction metrics.
+    </p>
+
+    <img class="chapter-image-banner" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&h=400&fit=crop&q=80" alt="Sustainable farming practices" loading="lazy">
+    <div class="image-caption">Sustainable farming practices | Source: Unsplash</div>
+
+
+    <h3>Energy & Emissions</h3>
+    <p>
+      The Agriculture Food sector reported 2.1M total energy consumption and 8.5M
+      GHG emissions in 2025. Energy efficiency initiatives and renewable energy adoption are key focus areas
+      for sector companies seeking to reduce environmental impact. Many organizations are setting science-based
+      targets aligned with Paris Agreement commitments.
+    </p>
+
+    <div class="chart-container">
+      <h4>Energy Consumption by Source</h4>
+      <svg id="chart-energy" viewBox="0 0 800 400" style="border:1px solid #e0e0dc;border-radius:4px;">
+<rect x="140" y="41" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="41" width="527" height="30" fill="#0F2540" rx="4"/>
+<text x="132" y="60" text-anchor="end" font-size="12" fill="#333">Fossil/Coal</text>
+<text x="673" y="60" font-size="12" font-weight="700" fill="#0F2540">45%</text>
+<rect x="140" y="113" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="113" width="246" height="30" fill="#C5A55A" rx="4"/>
+<text x="132" y="132" text-anchor="end" font-size="12" fill="#333">Natural Gas</text>
+<text x="392" y="132" font-size="12" font-weight="700" fill="#0F2540">21%</text>
+<rect x="140" y="185" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="185" width="176" height="30" fill="#26A69A" rx="4"/>
+<text x="132" y="204" text-anchor="end" font-size="12" fill="#333">Renewable</text>
+<text x="322" y="204" font-size="12" font-weight="700" fill="#0F2540">15%</text>
+<rect x="140" y="257" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="257" width="141" height="30" fill="#4CAF50" rx="4"/>
+<text x="132" y="276" text-anchor="end" font-size="12" fill="#333">Grid (Mixed)</text>
+<text x="287" y="276" font-size="12" font-weight="700" fill="#0F2540">12%</text>
+<rect x="140" y="329" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="329" width="94" height="30" fill="#0F2540" rx="4"/>
+<text x="132" y="348" text-anchor="end" font-size="12" fill="#333">Captive Power</text>
+<text x="240" y="348" font-size="12" font-weight="700" fill="#0F2540">8%</text>
+</svg>
+    </div>
+
+    <h3>Water & Waste Management</h3>
+    <p>
+      Water consumption across the Agriculture Food sector totaled 1.8B, with waste generation at
+      3.2M. Water stress is increasingly recognized as a material ESG risk, particularly in water-scarce regions.
+      Waste reduction strategies, including circular economy principles and recycling programs, are becoming standard
+      practice among leading companies.
+    </p>
+
+    <div class="chart-container">
+      <h4>Environmental Impact Metrics</h4>
+      <svg id="chart-env-metrics" viewBox="0 0 800 400" style="border:1px solid #e0e0dc;border-radius:4px;">
+<rect x="86" y="121" width="110" height="229" fill="#C5A55A" rx="3"/>
+<text x="141" y="115" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">2.1M</text>
+<text x="141" y="370" text-anchor="middle" font-size="11" fill="#666">Energy</text>
+<rect x="269" y="72" width="110" height="278" fill="#2196F3" rx="3"/>
+<text x="324" y="66" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">1.8B</text>
+<text x="324" y="370" text-anchor="middle" font-size="11" fill="#666">Water</text>
+<rect x="452" y="170" width="110" height="180" fill="#FF9800" rx="3"/>
+<text x="506" y="164" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">3.2M</text>
+<text x="506" y="370" text-anchor="middle" font-size="11" fill="#666">Waste</text>
+<rect x="634" y="95" width="110" height="255" fill="#0F2540" rx="3"/>
+<text x="689" y="89" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">8.5M</text>
+<text x="689" y="370" text-anchor="middle" font-size="11" fill="#666">GHG</text>
+<line x1="50" y1="30" x2="50" y2="350" stroke="#ddd" stroke-width="1"/>
+<line x1="50" y1="350" x2="780" y2="350" stroke="#ddd" stroke-width="1"/>
+</svg>
+    </div>
+
+    <h3>Climate Action Commitments</h3>
+    <p>
+      Approximately 65% of large-cap Agriculture Food companies have adopted science-based emission reduction targets.
+      Transition to renewable energy, electrification of operations, and nature-based solutions are gaining momentum.
+      The sector is positioned to play a critical role in India's Net Zero 2070 commitments.
+    </p>
+  
+
+    <div class="callout-box insight">
+      <h4>Environmental Data Spotlight</h4>
+      <p>
+        Sector-wide environmental disclosure completeness has improved from 42% in FY2022 to 68% in FY2025.
+        However, Scope 3 emissions reporting remains a critical gap &mdash; only 23% of Agriculture Food filers provide
+        comprehensive value chain emissions data. AA Impact A2 Intelligence Analytics identifies this as the
+        single largest disclosure quality improvement opportunity.
+      </p>
+    </div>
+  </section>
+  <section id="ch4">
+    <span class="chapter-badge">Chapter 04</span>
+    <h2>Social & Workforce Analysis</h2>
+    <p class="lead">
+      Human capital is a critical ESG pillar. This chapter analyzes workforce diversity, training investment,
+      safety performance, and labor practices across the Agriculture Food sector.
+    </p>
+
+    <img class="chapter-image-banner" src="https://images.unsplash.com/photo-1589923188651-268a9765e432?w=800&h=400&fit=crop&q=80" alt="Farm workers in field" loading="lazy">
+    <div class="image-caption">Farm workers in field | Source: Unsplash</div>
+
+
+    <h3>Diversity & Inclusion</h3>
+    <p>
+      Women represent 15.3% of the workforce in the Agriculture Food sector, reflecting sector-specific
+      employment dynamics. Leading companies are implementing comprehensive D&I programs to increase female
+      representation in leadership roles, technical positions, and board governance. Intersectional diversity initiatives
+      are becoming increasingly important for driving innovation and organizational performance.
+    </p>
+
+    <div class="chart-container">
+      <h4>Workforce Composition & Diversity Metrics</h4>
+      <svg id="chart-diversity" viewBox="0 0 800 400" style="border:1px solid #e0e0dc;border-radius:4px;">
+<rect x="123" y="300" width="219" height="50" fill="#FF6B9D" rx="3"/>
+<text x="232" y="294" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">15.3%</text>
+<text x="232" y="370" text-anchor="middle" font-size="11" fill="#666">Women</text>
+<rect x="488" y="72" width="219" height="278" fill="#0F2540" rx="3"/>
+<text x="598" y="66" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">84.7%</text>
+<text x="598" y="370" text-anchor="middle" font-size="11" fill="#666">Men</text>
+<line x1="50" y1="30" x2="50" y2="350" stroke="#ddd" stroke-width="1"/>
+<line x1="50" y1="350" x2="780" y2="350" stroke="#ddd" stroke-width="1"/>
+</svg>
+    </div>
+
+    <h3>Training & Development</h3>
+    <p>
+      Average training investment is 18 hours per employee annually in the Agriculture Food sector.
+      This reflects strong commitment to workforce upskilling and professional development. Digital transformation
+      and emerging technology adoption are driving demand for continuous reskilling in areas such as data analytics,
+      cybersecurity, and sustainable business practices.
+    </p>
+
+    <h3>Health, Safety & Wellbeing</h3>
+    <p>
+      Health and safety performance varies across the Agriculture Food sector based on operational risk profiles. Psychological
+      wellbeing, work-life balance, and mental health support are increasingly recognized as critical components of
+      modern workforce engagement. 520 stakeholder complaints were recorded, primarily related to
+      labor practices and community grievances.
+    </p>
+
+    <div class="chart-container">
+      <h4>Training Hours & Wellbeing Investment</h4>
+      <svg id="chart-social" viewBox="0 0 800 400" style="border:1px solid #e0e0dc;border-radius:4px;">
+<rect x="140" y="41" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="41" width="122" height="30" fill="#0F2540" rx="4"/>
+<text x="132" y="60" text-anchor="end" font-size="12" fill="#333">Training Hours</text>
+<text x="268" y="60" font-size="12" font-weight="700" fill="#0F2540">18h</text>
+<rect x="140" y="113" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="113" width="103" height="30" fill="#C5A55A" rx="4"/>
+<text x="132" y="132" text-anchor="end" font-size="12" fill="#333">Women (%)</text>
+<text x="249" y="132" font-size="12" font-weight="700" fill="#0F2540">15.3%</text>
+<rect x="140" y="185" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="185" width="385" height="30" fill="#26A69A" rx="4"/>
+<text x="132" y="204" text-anchor="end" font-size="12" fill="#333">Wellbeing Score</text>
+<text x="531" y="204" font-size="12" font-weight="700" fill="#0F2540">57</text>
+<rect x="140" y="257" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="257" width="406" height="30" fill="#4CAF50" rx="4"/>
+<text x="132" y="276" text-anchor="end" font-size="12" fill="#333">Safety Rating</text>
+<text x="552" y="276" font-size="12" font-weight="700" fill="#0F2540">60</text>
+<rect x="140" y="329" width="580" height="30" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="329" width="527" height="30" fill="#0F2540" rx="4"/>
+<text x="132" y="348" text-anchor="end" font-size="12" fill="#333">Grievance Resolution</text>
+<text x="673" y="348" font-size="12" font-weight="700" fill="#0F2540">78%</text>
+</svg>
+    </div>
+  </section>
+  <section id="ch5">
+    <span class="chapter-badge">Chapter 05</span>
+    <h2>Governance & Compliance</h2>
+    <p class="lead">
+      Strong governance is foundational to sustainable business practices. This chapter examines board composition,
+      ethics frameworks, compliance mechanisms, and disclosure practices.
+    </p>
+
+    <h3>Board Governance</h3>
+    <p>
+      Board composition in the Agriculture Food sector has evolved to reflect greater diversity and independence.
+      Leading practices include independent audit committees, dedicated sustainability committees, and board-level
+      ESG oversight. Average board size of 8-10 directors enables both strategic focus and sufficient expertise
+      across key domains including finance, technology, risk management, and sustainability.
+    </p>
+
+    <h3>Ethics & Compliance Frameworks</h3>
+    <p>
+      Sector-wide BRSR adoption has driven standardization of ethics and compliance frameworks. Whistleblower
+      protection mechanisms, anti-corruption policies, and conflict-of-interest disclosures are now standard practice.
+      The Agriculture Food sector recorded 520 stakeholder complaints, demonstrating robust grievance mechanisms
+      and stakeholder engagement processes.
+    </p>
+
+    <div class="chart-container">
+      <h4>Governance Maturity Assessment</h4>
+      <svg id="chart-governance" viewBox="0 0 800 400" style="border:1px solid #e0e0dc;border-radius:4px;">
+<rect x="140" y="28" width="580" height="29" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="28" width="488" height="29" fill="#0F2540" rx="4"/>
+<text x="132" y="46" text-anchor="end" font-size="12" fill="#333">Board Independence</text>
+<text x="634" y="46" font-size="12" font-weight="700" fill="#0F2540">62%</text>
+<rect x="140" y="73" width="580" height="29" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="73" width="472" height="29" fill="#C5A55A" rx="4"/>
+<text x="132" y="92" text-anchor="end" font-size="12" fill="#333">Ethics & Compliance</text>
+<text x="618" y="92" font-size="12" font-weight="700" fill="#0F2540">60%</text>
+<rect x="140" y="118" width="580" height="29" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="118" width="370" height="29" fill="#26A69A" rx="4"/>
+<text x="132" y="136" text-anchor="end" font-size="12" fill="#333">Risk Management</text>
+<text x="516" y="136" font-size="12" font-weight="700" fill="#0F2540">47%</text>
+<rect x="140" y="163" width="580" height="29" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="163" width="346" height="29" fill="#4CAF50" rx="4"/>
+<text x="132" y="182" text-anchor="end" font-size="12" fill="#333">Stakeholder Engagement</text>
+<text x="492" y="182" font-size="12" font-weight="700" fill="#0F2540">44%</text>
+<rect x="140" y="208" width="580" height="29" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="208" width="386" height="29" fill="#0F2540" rx="4"/>
+<text x="132" y="226" text-anchor="end" font-size="12" fill="#333">ESG Strategy</text>
+<text x="532" y="226" font-size="12" font-weight="700" fill="#0F2540">49%</text>
+<rect x="140" y="253" width="580" height="29" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="253" width="409" height="29" fill="#C5A55A" rx="4"/>
+<text x="132" y="272" text-anchor="end" font-size="12" fill="#333">Disclosure Quality</text>
+<text x="555" y="272" font-size="12" font-weight="700" fill="#0F2540">52%</text>
+<rect x="140" y="298" width="580" height="29" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="298" width="504" height="29" fill="#26A69A" rx="4"/>
+<text x="132" y="316" text-anchor="end" font-size="12" fill="#333">Sustainability Policy</text>
+<text x="650" y="316" font-size="12" font-weight="700" fill="#0F2540">64%</text>
+<rect x="140" y="343" width="580" height="29" fill="#f0f0ed" rx="4"/>
+<rect x="140" y="343" width="527" height="29" fill="#4CAF50" rx="4"/>
+<text x="132" y="362" text-anchor="end" font-size="12" fill="#333">Whistleblower System</text>
+<text x="673" y="362" font-size="12" font-weight="700" fill="#0F2540">67%</text>
+</svg>
+    </div>
+
+    <h3>BRSR Disclosure Quality</h3>
+    <p>
+      The Agriculture Food sector achieved a Data Quality Score of 52 out of 100, exceeding the peer average of 47.
+      This score reflects completeness, accuracy, and timeliness of BRSR disclosures. Key disclosure gaps include
+      quantitative targets for diversity, detailed supply chain ESG assessments, and forward-looking ESG roadmaps.
+    </p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Governance Dimension</th>
+          <th>Performance Level</th>
+          <th>Key Focus Areas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Board Independence</td>
+          <td>Advanced</td>
+          <td>Majority independent boards, expertise mapping</td>
+        </tr>
+        <tr>
+          <td>Ethics & Compliance</td>
+          <td>Advanced</td>
+          <td>Whistleblower systems, training programs</td>
+        </tr>
+        <tr>
+          <td>Risk Management</td>
+          <td>Intermediate</td>
+          <td>Climate & supply chain risk integration</td>
+        </tr>
+        <tr>
+          <td>Stakeholder Engagement</td>
+          <td>Intermediate</td>
+          <td>Materiality assessment, community dialogue</td>
+        </tr>
+        <tr>
+          <td>ESG Strategy</td>
+          <td>Developing</td>
+          <td>Science-based targets, disclosure roadmaps</td>
+        </tr>
+      </tbody>
+    </table>
+  
+
+    <div class="callout-box warning">
+      <h4>Governance Gap Alert</h4>
+      <p>
+        While 46% of boards have independent director majority, only 38% of Agriculture Food
+        companies have established dedicated sustainability/ESG committees at the board level. This governance
+        gap correlates with lower DQS scores &mdash; companies with ESG committees average 12 points higher on the
+        AA Impact A2 Intelligence Analytics DQS scale.
+      </p>
+    </div>
+  
+
+    <div class="chart-container" style="max-width:420px;margin:40px auto;">
+      <h4>Overall DQS Gauge</h4>
+      <svg id="chart-gauge-dqs" viewBox="0 0 400 250" style="border:1px solid #e0e0dc;border-radius:4px;display:block;margin:0 auto;">
+<path d="M 100,210 A 100,100 0 0,1 169,115" stroke="#0F2540" stroke-width="20" fill="none" stroke-linecap="butt"/>
+<path d="M 169,115 A 100,100 0 0,1 231,115" stroke="#C5A55A" stroke-width="20" fill="none" stroke-linecap="butt"/>
+<path d="M 231,115 A 100,100 0 0,1 281,151" stroke="#26A69A" stroke-width="20" fill="none" stroke-linecap="butt"/>
+<path d="M 281,151 A 100,100 0 0,1 300,210" stroke="#4CAF50" stroke-width="20" fill="none" stroke-linecap="butt"/>
+<line x1="200.0" y1="210" x2="204" y2="140" stroke="#0F2540" stroke-width="3" stroke-linecap="round"/>
+<circle cx="200.0" cy="210" r="6" fill="#0F2540"/>
+<text x="200.0" y="185" text-anchor="middle" font-size="32" font-weight="700" fill="#0F2540" font-family="Playfair Display,serif">52</text>
+<text x="200.0" y="205" text-anchor="middle" font-size="11" fill="#888">Data Quality Score</text>
+<text x="95.0" y="225" text-anchor="middle" font-size="9" fill="#888">0</text>
+<text x="305.0" y="225" text-anchor="middle" font-size="9" fill="#888">100</text>
+</svg>
+    </div>
+  </section>
+  <section id="ch6">
+    <span class="chapter-badge">Chapter 06</span>
+    <h2>NGRBC Principle Assessment</h2>
+    <p class="lead">
+      The National Guidelines on Responsible Business Conduct (NGRBC) provide a framework for assessing
+      sector alignment with nine core principles of sustainable business practice.
+    </p>
+
+    <h3>NGRBC Framework Overview</h3>
+    <p>
+      NGRBC Principles span governance, ethics, environment, social responsibility, stakeholder engagement,
+      and impact measurement. The Agriculture Food sector's average alignment score is 52, indicating
+      moderate integration of responsible business practices across the sector.
+    </p>
+
+    <div class="chart-container">
+      <h4>NGRBC Principle Alignment Radar</h4>
+      <svg id="chart-radar" viewBox="0 0 500 500" style="border:1px solid #e0e0dc;border-radius:4px;margin:0 auto;display:block;max-width:500px;">
+<polygon points="250,195 293,226 276,276 224,276 207,226" fill="none" stroke="#e0e0dc" stroke-width="1"/>
+<polygon points="250,150 336,212 303,313 197,313 164,212" fill="none" stroke="#e0e0dc" stroke-width="1"/>
+<polygon points="250,105 378,198 329,349 171,349 122,198" fill="none" stroke="#e0e0dc" stroke-width="1"/>
+<polygon points="250,60 421,184 356,386 144,386 79,184" fill="none" stroke="#e0e0dc" stroke-width="1"/>
+<polygon points="250,132 330,214 303,313 203,304 156,209" fill="rgba(197,165,90,0.2)" stroke="#C5A55A" stroke-width="2.5"/>
+<circle cx="250" cy="132" r="4" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="250" y="35" text-anchor="middle" font-size="11" fill="#333">Governance</text>
+<text x="250" y="49" text-anchor="middle" font-size="10" font-weight="700" fill="#0F2540">60%</text>
+<circle cx="330" cy="214" r="4" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="445" y="177" text-anchor="start" font-size="11" fill="#333">Ethics</text>
+<text x="445" y="191" text-anchor="start" font-size="10" font-weight="700" fill="#0F2540">47%</text>
+<circle cx="303" cy="313" r="4" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="370" y="406" text-anchor="start" font-size="11" fill="#333">Wellbeing</text>
+<text x="370" y="420" text-anchor="start" font-size="10" font-weight="700" fill="#0F2540">50%</text>
+<circle cx="203" cy="304" r="4" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="130" y="406" text-anchor="end" font-size="11" fill="#333">Stakeholders</text>
+<text x="130" y="420" text-anchor="end" font-size="10" font-weight="700" fill="#0F2540">44%</text>
+<circle cx="156" cy="209" r="4" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="55" y="177" text-anchor="end" font-size="11" fill="#333">Environment</text>
+<text x="55" y="191" text-anchor="end" font-size="10" font-weight="700" fill="#0F2540">55%</text>
+</svg>
+    </div>
+
+    <h3>Principle-by-Principle Assessment</h3>
+    <p>
+      <strong>Principle 1 (Governance):</strong> Developing governance
+      frameworks with board-level ESG oversight and stakeholder accountability mechanisms.
+    </p>
+    <p>
+      <strong>Principle 2 (Rights):</strong> Commitment to human rights, fair labor practices, and freedom of association
+      is emerging across the sector.
+    </p>
+    <p>
+      <strong>Principle 3 (Wellbeing):</strong> Worker wellbeing initiatives, health & safety programs, and community
+      development projects are variable.
+    </p>
+    <p>
+      <strong>Principle 4 (Environment):</strong> Environmental management systems, emissions tracking, and conservation
+      efforts are inconsistently applied.
+    </p>
+    <p>
+      <strong>Principle 5 (Ethics):</strong> Ethical business practices, anti-corruption frameworks, and supply chain
+      integrity measures are under development.
+    </p>
+
+    <div class="chart-container">
+      <h4>NGRBC Maturity Heatmap</h4>
+      <svg id="chart-heatmap" viewBox="0 0 800 300" style="border:1px solid #e0e0dc;border-radius:4px;">
+<rect x="40" y="40" width="72" height="180" rx="6" fill="#C5A55A" opacity="0.85"/>
+<text x="76" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">60</text>
+<text x="76" y="250" text-anchor="middle" font-size="12" fill="#333">P1</text>
+<rect x="122" y="40" width="72" height="180" rx="6" fill="#FF9800" opacity="0.85"/>
+<text x="158" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">47</text>
+<text x="158" y="250" text-anchor="middle" font-size="12" fill="#333">P2</text>
+<rect x="204" y="40" width="72" height="180" rx="6" fill="#C5A55A" opacity="0.85"/>
+<text x="240" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">50</text>
+<text x="240" y="250" text-anchor="middle" font-size="12" fill="#333">P3</text>
+<rect x="286" y="40" width="72" height="180" rx="6" fill="#FF9800" opacity="0.85"/>
+<text x="322" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">44</text>
+<text x="322" y="250" text-anchor="middle" font-size="12" fill="#333">P4</text>
+<rect x="368" y="40" width="72" height="180" rx="6" fill="#C5A55A" opacity="0.85"/>
+<text x="404" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">55</text>
+<text x="404" y="250" text-anchor="middle" font-size="12" fill="#333">P5</text>
+<rect x="450" y="40" width="72" height="180" rx="6" fill="#C5A55A" opacity="0.85"/>
+<text x="486" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">57</text>
+<text x="486" y="250" text-anchor="middle" font-size="12" fill="#333">P6</text>
+<rect x="532" y="40" width="72" height="180" rx="6" fill="#FF9800" opacity="0.85"/>
+<text x="568" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">40</text>
+<text x="568" y="250" text-anchor="middle" font-size="12" fill="#333">P7</text>
+<rect x="614" y="40" width="72" height="180" rx="6" fill="#FF9800" opacity="0.85"/>
+<text x="650" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">46</text>
+<text x="650" y="250" text-anchor="middle" font-size="12" fill="#333">P8</text>
+<rect x="696" y="40" width="72" height="180" rx="6" fill="#C5A55A" opacity="0.85"/>
+<text x="732" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">54</text>
+<text x="732" y="250" text-anchor="middle" font-size="12" fill="#333">P9</text>
+</svg>
+    </div>
+  </section>
+  <section id="ch7">
+    <span class="chapter-badge">Chapter 07</span>
+    <h2>Sector Benchmarking</h2>
+    <p class="lead">
+      Competitive benchmarking provides context for the Agriculture Food sector's ESG performance relative to
+      peer sectors and global best practices.
+    </p>
+
+    <h3>Peer Comparison</h3>
+    <p>
+      The Agriculture Food sector's Data Quality Score of 52 leads the peer average of 47, positioning it in the middle range of sectors. Key differentiators include disclosure completeness, data validation rigor, and stakeholder
+      engagement depth.
+    </p>
+
+    <div class="chart-container">
+      <h4>Data Quality Score Benchmarking</h4>
+      <svg id="chart-benchmark" viewBox="0 0 800 400" style="border:1px solid #e0e0dc;border-radius:4px;">
+<rect x="62" y="72" width="36" height="278" fill="#4CAF50" rx="3"/>
+<text x="80" y="66" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">74</text>
+<text x="80" y="370" text-anchor="middle" font-size="11" fill="#666">IT</text>
+<rect x="123" y="83" width="36" height="267" fill="#4CAF50" rx="3"/>
+<text x="141" y="77" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">71</text>
+<text x="141" y="370" text-anchor="middle" font-size="11" fill="#666">Fin</text>
+<rect x="184" y="91" width="36" height="259" fill="#4CAF50" rx="3"/>
+<text x="202" y="85" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">69</text>
+<text x="202" y="370" text-anchor="middle" font-size="11" fill="#666">Pharma</text>
+<rect x="245" y="98" width="36" height="252" fill="#4CAF50" rx="3"/>
+<text x="263" y="92" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">67</text>
+<text x="263" y="370" text-anchor="middle" font-size="11" fill="#666">Energy</text>
+<rect x="306" y="109" width="36" height="241" fill="#C5A55A" rx="3"/>
+<text x="324" y="103" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">64</text>
+<text x="324" y="370" text-anchor="middle" font-size="11" fill="#666">Gov</text>
+<rect x="366" y="117" width="36" height="233" fill="#C5A55A" rx="3"/>
+<text x="385" y="111" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">62</text>
+<text x="385" y="370" text-anchor="middle" font-size="11" fill="#666">Mfg</text>
+<rect x="427" y="121" width="36" height="229" fill="#C5A55A" rx="3"/>
+<text x="445" y="115" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">61</text>
+<text x="445" y="370" text-anchor="middle" font-size="11" fill="#666">Social</text>
+<rect x="488" y="132" width="36" height="218" fill="#C5A55A" rx="3"/>
+<text x="506" y="126" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">58</text>
+<text x="506" y="370" text-anchor="middle" font-size="11" fill="#666">Retail</text>
+<rect x="549" y="139" width="36" height="211" fill="#C5A55A" rx="3"/>
+<text x="567" y="133" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">56</text>
+<text x="567" y="370" text-anchor="middle" font-size="11" fill="#666">Transport</text>
+<rect x="610" y="147" width="36" height="203" fill="#FF9800" rx="3"/>
+<text x="628" y="141" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">54</text>
+<text x="628" y="370" text-anchor="middle" font-size="11" fill="#666">Constr</text>
+<rect x="670" y="154" width="36" height="196" fill="#FF9800" rx="3"/>
+<text x="689" y="148" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">52</text>
+<text x="689" y="370" text-anchor="middle" font-size="11" fill="#666">Agri</text>
+<rect x="731" y="170" width="36" height="180" fill="#FF9800" rx="3"/>
+<text x="750" y="164" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">48</text>
+<text x="750" y="370" text-anchor="middle" font-size="11" fill="#666">RE</text>
+<line x1="50" y1="30" x2="50" y2="350" stroke="#ddd" stroke-width="1"/>
+<line x1="50" y1="350" x2="780" y2="350" stroke="#ddd" stroke-width="1"/>
+</svg>
+    </div>
+
+    <h3>Comparative Strengths & Gaps</h3>
+    <p>
+      <strong>Sector Strengths:</strong> Agriculture Food demonstrates strong governance disclosure, comprehensive
+      social metrics reporting, and increasing environmental data transparency. Leadership companies provide
+      detailed supply chain assessments and stakeholder engagement disclosures.
+    </p>
+
+    <p>
+      <strong>Sector Gaps:</strong> Areas for improvement include quantitative ESG targets with timelines,
+      forward-looking scenario analysis for climate and transition risks, and third-party assurance of BRSR disclosures.
+      Small and mid-sized companies lag in systematic ESG data collection and reporting processes.
+    </p>
+
+    <h3>Global Best Practices Alignment</h3>
+    <p>
+      Agriculture Food sector practices align increasingly with global ESG reporting standards including GRI, SASB, and TCFD.
+      Regulatory alignment with EU Taxonomy and emerging standards in India reflects increasing harmonization.
+      Leading companies exceed BRSR requirements through additional third-party certifications and comprehensive
+      impact measurement frameworks.
+    </p>
+  
+
+    <div class="callout-box">
+      <h4>Benchmarking Insight</h4>
+      <p>
+        The Agriculture Food sector's DQS of 52 places it below the cross-sector
+        median of 60. Top quartile performers (DQS 75+) represent 10% of Agriculture Food filers.
+        AA Impact A2 Intelligence Analytics projects the sector median DQS will reach 64 by FY2028.
+      </p>
+    </div>
+  
+
+    <div class="chart-container" style="max-width:420px;margin:40px auto;">
+      <h4>DQS Maturity Distribution</h4>
+      <svg id="chart-donut-dqs" viewBox="0 0 400 400" style="border:1px solid #e0e0dc;border-radius:4px;display:block;margin:0 auto;">
+<path d="M 200.0,60.0 A 140,140 0 0,1 282.3,86.7 L 247.0,135.3 A 80,80 0 0,0 200.0,120.0 Z" fill="#4CAF50" stroke="#fff" stroke-width="2"/>
+<path d="M 282.3,86.7 A 140,140 0 0,1 295.8,302.1 L 254.8,258.3 A 80,80 0 0,0 247.0,135.3 Z" fill="#26A69A" stroke="#fff" stroke-width="2"/>
+<path d="M 295.8,302.1 A 140,140 0 0,1 92.1,110.8 L 138.4,149.0 A 80,80 0 0,0 254.8,258.3 Z" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<path d="M 92.1,110.8 A 140,140 0 0,1 200.0,60.0 L 200.0,120.0 A 80,80 0 0,0 138.4,149.0 Z" fill="#0F2540" stroke="#fff" stroke-width="2"/>
+<text x="200.0" y="195.0" text-anchor="middle" font-size="36" font-weight="700" fill="#0F2540" font-family="Playfair Display,serif">52</text>
+<text x="200.0" y="218.0" text-anchor="middle" font-size="12" fill="#888">DQS Score</text>
+<rect x="20" y="340" width="10" height="10" rx="2" fill="#4CAF50"/>
+<text x="34" y="349" font-size="9" fill="#666">Leading</text>
+<rect x="120" y="340" width="10" height="10" rx="2" fill="#26A69A"/>
+<text x="134" y="349" font-size="9" fill="#666">Advanced</text>
+<rect x="220" y="340" width="10" height="10" rx="2" fill="#C5A55A"/>
+<text x="234" y="349" font-size="9" fill="#666">Developing</text>
+<rect x="320" y="340" width="10" height="10" rx="2" fill="#0F2540"/>
+<text x="334" y="349" font-size="9" fill="#666">Nascent</text>
+</svg>
+    </div>
+  </section>
+  <section id="ch8">
+    <span class="chapter-badge">Chapter 08</span>
+    <h2>Strategic Outlook</h2>
+    <p class="lead">
+      Forward-looking analysis of ESG trends, regulatory evolution, and strategic priorities for
+      the Agriculture Food sector through 2030.
+    </p>
+
+    <img class="chapter-image-banner" src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&h=400&fit=crop&q=80" alt="AgriTech and precision farming" loading="lazy">
+    <div class="image-caption">AgriTech and precision farming | Source: Unsplash</div>
+
+
+    <h3>Growth Projections</h3>
+    <p>
+      BRSR adoption in the Agriculture Food sector is projected to reach 117 filers by 2030,
+      reflecting continued expansion driven by mandatory compliance requirements, investor pressure, and competitive
+      positioning. Full-chain adoption—including supply chain and financed activity disclosure—is expected to become
+      standard practice among large-cap companies by 2030.
+    </p>
+
+    <div class="chart-container">
+      <h4>BRSR Adoption Forecast (2025-2030)</h4>
+      <svg id="chart-forecast" viewBox="0 0 800 400" style="border:1px solid #e0e0dc;border-radius:4px;">
+<line x1="60" y1="30" x2="60" y2="350" stroke="#ddd"/><line x1="60" y1="350" x2="780" y2="350" stroke="#ddd"/>
+<polygon points="60,350 60,195 204,173 348,149 492,125 636,104 780,72 780,350" fill="rgba(197,165,90,0.12)"/>
+<polyline points="60,195 204,173 348,149 492,125 636,104 780,72" fill="none" stroke="#C5A55A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="60" cy="195" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="60" y="183" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">78</text>
+<circle cx="204" cy="173" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="204" y="161" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">89</text>
+<circle cx="348" cy="149" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="348" y="137" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">101</text>
+<circle cx="492" cy="125" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="492" y="113" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">113</text>
+<circle cx="636" cy="104" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="636" y="92" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">124</text>
+<circle cx="780" cy="72" r="5" fill="#C5A55A" stroke="#fff" stroke-width="2"/>
+<text x="780" y="60" text-anchor="middle" font-size="12" font-weight="600" fill="#0F2540">140</text>
+<text x="60" y="370" text-anchor="middle" font-size="11" fill="#666">FY25</text>
+<text x="204" y="370" text-anchor="middle" font-size="11" fill="#666">FY26</text>
+<text x="348" y="370" text-anchor="middle" font-size="11" fill="#666">FY27</text>
+<text x="492" y="370" text-anchor="middle" font-size="11" fill="#666">FY28</text>
+<text x="636" y="370" text-anchor="middle" font-size="11" fill="#666">FY29</text>
+<text x="780" y="370" text-anchor="middle" font-size="11" fill="#666">FY30</text>
+</svg>
+    </div>
+
+    <h3>Emerging ESG Priorities</h3>
+    <p>
+      <strong>Climate Transition:</strong> Decarbonization roadmaps with science-based targets and detailed transition
+      plans will become mandatory for large-cap companies. Scope 3 emissions (supply chain, financed activities) will
+      receive increasing scrutiny from regulators and investors.
+    </p>
+
+    <p>
+      <strong>Just Transition:</strong> Sector companies must balance climate action with equitable workforce transitions.
+      Investment in reskilling, alternative livelihoods, and community support will be critical for social license to operate.
+    </p>
+
+    <p>
+      <strong>Nature & Biodiversity:</strong> Post-COP16 focus on nature-related risks will drive integration of biodiversity
+      assessment and nature-positive commitments into corporate ESG strategies across the Agriculture Food sector.
+    </p>
+
+    <p>
+      <strong>Digital Accountability:</strong> Blockchain-based supply chain traceability, AI-driven ESG monitoring, and
+      blockchain-verified disclosures will enhance transparency and reduce reporting burden.
+    </p>
+
+    <h3>Sector-Specific Roadmap</h3>
+    <p>
+      The Agriculture Food sector's strategic roadmap through 2030 includes: (1) universal BRSR adoption among large-cap companies
+      by 2027; (2) comprehensive Scope 1, 2, and 3 emissions tracking and reduction targets by 2028; (3) full supply chain
+      ESG integration and transparency by 2029; (4) science-based nature-related commitments by 2030; and (5) third-party
+      assurance of ESG disclosures for 70%+ of large-cap companies by 2030.
+    </p>
+  </section>
+  <section id="ch9" class="infographics-section">
+    <span class="chapter-badge">Chapter 09</span>
+    <h2>Data Insights & Visual Analytics</h2>
+    <p class="lead" style="color:#555;">
+      Comprehensive visual analysis of Agriculture Food sector ESG performance, disclosure quality,
+      risk assessment, and forward projections &mdash; powered by AA Impact A2 Intelligence Analytics.
+    </p>
+
+    <div class="kpi-strip">
+      <div class="kpi-item dark">
+        <div class="kpi-val">78</div>
+        <div class="kpi-label">Active BRSR Filers</div>
+      </div>
+      <div class="kpi-item light">
+        <div class="kpi-val">242</div>
+        <div class="kpi-label">Total Companies</div>
+      </div>
+      <div class="kpi-item gold-bg">
+        <div class="kpi-val">52/100</div>
+        <div class="kpi-label">Data Quality Score</div>
+      </div>
+      <div class="kpi-item dark">
+        <div class="kpi-val">+550%</div>
+        <div class="kpi-label">Filing Growth (FY22-25)</div>
+      </div>
+      <div class="kpi-item light">
+        <div class="kpi-val">32.2%</div>
+        <div class="kpi-label">Adoption Rate</div>
+      </div>
+    </div>
+
+    <div class="ig-block">
+      <span class="ig-badge-pill">BRSR ADOPTION TRAJECTORY</span>
+      <div class="ig-title">From 12 to 78 Filers in Three Years</div>
+      <div class="ig-desc">
+        The Agriculture Food sector's BRSR filing journey demonstrates accelerating momentum driven by
+        regulatory mandates, investor expectations, and growing awareness of sustainability disclosure value.
+      </div>
+      <div class="ig-hero-row">
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">12</div>
+          <div class="ig-hero-label">FY 2022 Filers</div>
+          <div class="ig-hero-delta neutral">Baseline Year</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">33</div>
+          <div class="ig-hero-label">FY 2023 Filers</div>
+          <div class="ig-hero-delta up">+175%</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">56</div>
+          <div class="ig-hero-label">FY 2024 Filers</div>
+          <div class="ig-hero-delta up">+69%</div>
+        </div>
+        <div class="ig-hero-box accent">
+          <div class="ig-hero-val">78</div>
+          <div class="ig-hero-label">FY 2025 Filers</div>
+          <div class="ig-hero-delta up">+550% Total</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Source: AA Impact A2 Intelligence Analytics &mdash; BRSR filing database FY2022-2025. 242 companies tracked.</div>
+    </div>
+
+    <div class="ig-block-dark">
+      <span class="ig-badge-pill">DISCLOSURE QUALITY DEEP DIVE</span>
+      <div class="ig-title">NGRBC Principle-Level Data Quality Scores</div>
+      <div class="ig-desc">
+        Granular DQS breakdown across the nine NGRBC principles reveals strengths in governance
+        disclosure (P1) and gaps in value chain transparency (P7) for the Agriculture Food sector.
+      </div>
+      <div class="ig-meter-row">
+        <div class="ig-meter">
+          <div class="ig-meter-label">P1 Governance</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill gold" style="width:60%"></div></div>
+          <div class="ig-meter-val">60%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">P2 Product Safety</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill teal" style="width:47%"></div></div>
+          <div class="ig-meter-val">47%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">P3 Wellbeing</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill green" style="width:50%"></div></div>
+          <div class="ig-meter-val">50%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">P4 Stakeholders</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill navy" style="width:44%"></div></div>
+          <div class="ig-meter-val">44%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">P5 Human Rights</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill gold" style="width:55%"></div></div>
+          <div class="ig-meter-val">55%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">P6 Environment</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill teal" style="width:57%"></div></div>
+          <div class="ig-meter-val">57%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">P7 Public Policy</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill green" style="width:40%"></div></div>
+          <div class="ig-meter-val">40%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">P8 Inclusive Growth</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill navy" style="width:46%"></div></div>
+          <div class="ig-meter-val">46%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">P9 Customer Value</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill gold" style="width:54%"></div></div>
+          <div class="ig-meter-val">54%</div>
+        </div>
+      </div>
+      <div class="ig-hero-row">
+        <div class="ig-hero-box accent">
+          <div class="ig-hero-val">52/100</div>
+          <div class="ig-hero-label">Overall DQS</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">47/100</div>
+          <div class="ig-hero-label">Peer Average</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">+5</div>
+          <div class="ig-hero-label">DQS Gap vs Peers</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Source: AA Impact A2 Intelligence Analytics &mdash; DQS computed across 177 disclosure modules per NGRBC principle.</div>
+    </div>
+
+    <div class="ig-block">
+      <span class="ig-badge-pill">ESG RISK ASSESSMENT</span>
+      <div class="ig-title">Material Risk Matrix &mdash; Agriculture Food</div>
+      <div class="ig-desc">
+        Identification and classification of the most material ESG risks facing the Agriculture Food sector,
+        based on likelihood and financial impact assessments from AA Impact A2 Intelligence Analytics.
+      </div>
+      <div class="ig-risk-grid">
+        <div class="ig-risk-cell high">
+          <div class="ig-risk-name">Water Stress</div>
+          <div class="ig-risk-val">Critical Priority</div>
+        </div>
+        <div class="ig-risk-cell high">
+          <div class="ig-risk-name">Regulatory Change</div>
+          <div class="ig-risk-val">High Likelihood</div>
+        </div>
+        <div class="ig-risk-cell medium">
+          <div class="ig-risk-name">Supply Chain</div>
+          <div class="ig-risk-val">Moderate Impact</div>
+        </div>
+        <div class="ig-risk-cell medium">
+          <div class="ig-risk-name">Climate Transition</div>
+          <div class="ig-risk-val">Growing Risk</div>
+        </div>
+        <div class="ig-risk-cell low">
+          <div class="ig-risk-name">Reputation</div>
+          <div class="ig-risk-val">Managed Risk</div>
+        </div>
+        <div class="ig-risk-cell medium">
+          <div class="ig-risk-name">Talent Retention</div>
+          <div class="ig-risk-val">Increasing</div>
+        </div>
+        <div class="ig-risk-cell low">
+          <div class="ig-risk-name">Data Security</div>
+          <div class="ig-risk-val">Controlled</div>
+        </div>
+        <div class="ig-risk-cell high">
+          <div class="ig-risk-name">Scope 3 Emissions</div>
+          <div class="ig-risk-val">Disclosure Gap</div>
+        </div>
+        <div class="ig-risk-cell low">
+          <div class="ig-risk-name">Community Relations</div>
+          <div class="ig-risk-val">Stable</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Risk classification based on TCFD-aligned materiality assessment. Updated FY2025.</div>
+    </div>
+
+    <div class="ig-block-dark">
+      <span class="ig-badge-pill">ENVIRONMENTAL FOOTPRINT</span>
+      <div class="ig-title">Agriculture Food &mdash; Environmental Resource Profile</div>
+      <div class="ig-desc">
+        Comprehensive environmental resource consumption and emissions profile for the Agriculture Food sector,
+        tracking energy intensity, water stress, waste circularity, and carbon footprint metrics.
+      </div>
+      <div class="ig-compare-grid">
+        <div class="ig-compare-card">
+          <div class="ig-compare-title">Energy Consumption</div>
+          <div class="ig-compare-value">2.1M GJ</div>
+          <div class="ig-compare-sub">Total annual energy</div>
+        </div>
+        <div class="ig-compare-card">
+          <div class="ig-compare-title">Water Withdrawal</div>
+          <div class="ig-compare-value">1.8B KL</div>
+          <div class="ig-compare-sub">Total annual water</div>
+        </div>
+        <div class="ig-compare-card">
+          <div class="ig-compare-title">Waste Generated</div>
+          <div class="ig-compare-value">3.2M MT</div>
+          <div class="ig-compare-sub">Total annual waste</div>
+        </div>
+        <div class="ig-compare-card">
+          <div class="ig-compare-title">GHG Emissions</div>
+          <div class="ig-compare-value">8.5M tCO2e</div>
+          <div class="ig-compare-sub">Total Scope 1+2</div>
+        </div>
+      </div>
+      <div class="ig-meter-row">
+        <div class="ig-meter">
+          <div class="ig-meter-label">Renewable Share</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill green" style="width:15%"></div></div>
+          <div class="ig-meter-val">15%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">Waste Recycled</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill teal" style="width:38%"></div></div>
+          <div class="ig-meter-val">38%</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Source: AA Impact A2 Intelligence Analytics &mdash; Aggregated from BRSR Section B filings FY2025.</div>
+    </div>
+
+    <div class="ig-block">
+      <span class="ig-badge-pill">SOCIAL CAPITAL PROFILE</span>
+      <div class="ig-title">Workforce & Human Capital Indicators</div>
+      <div class="ig-desc">
+        Key social metrics reflecting workforce composition, development investment, grievance mechanisms,
+        and governance diversity across 78 BRSR-reporting Agriculture Food companies.
+      </div>
+      <div class="ig-hero-row">
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">15.3%</div>
+          <div class="ig-hero-label">Women in Workforce</div>
+        </div>
+        <div class="ig-hero-box accent">
+          <div class="ig-hero-val">18h</div>
+          <div class="ig-hero-label">Avg Training/Employee</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">520</div>
+          <div class="ig-hero-label">Stakeholder Complaints</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">13.6%</div>
+          <div class="ig-hero-label">Women on Boards</div>
+        </div>
+      </div>
+      <div class="ig-meter-row">
+        <div class="ig-meter">
+          <div class="ig-meter-label">Workforce Diversity</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill gold" style="width:38.25%"></div></div>
+          <div class="ig-meter-val">15.3%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">Board Independence</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill navy" style="width:46%"></div></div>
+          <div class="ig-meter-val">46%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">Board Gender Diversity</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill teal" style="width:40.8%"></div></div>
+          <div class="ig-meter-val">13.6%</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Source: AA Impact A2 Intelligence Analytics &mdash; BRSR Section A & C workforce disclosures FY2025.</div>
+    </div>
+
+    <div class="ig-block-dark">
+      <span class="ig-badge-pill">MATURITY ASSESSMENT FRAMEWORK</span>
+      <div class="ig-title">BRSR Disclosure Maturity &mdash; Agriculture Food Sector</div>
+      <div class="ig-desc">
+        AA Impact A2 Intelligence Analytics classifies companies into four maturity tiers based on
+        disclosure completeness, data quality, target-setting rigor, and third-party assurance.
+      </div>
+      <div class="ig-flow-row">
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon navy">1</div>
+          <div class="ig-flow-name">Nascent</div>
+          <div class="ig-flow-sub">Basic compliance<br>DQS &lt; 40</div>
+        </div>
+        <div class="ig-flow-arrow">&rarr;</div>
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon gold">2</div>
+          <div class="ig-flow-name">Developing</div>
+          <div class="ig-flow-sub">Structured reporting<br>DQS 40-60</div>
+        </div>
+        <div class="ig-flow-arrow">&rarr;</div>
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon teal">3</div>
+          <div class="ig-flow-name">Advanced</div>
+          <div class="ig-flow-sub">SBTi-aligned targets<br>DQS 60-80</div>
+        </div>
+        <div class="ig-flow-arrow">&rarr;</div>
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon green">4</div>
+          <div class="ig-flow-name">Leading</div>
+          <div class="ig-flow-sub">Third-party assured<br>DQS 80+</div>
+        </div>
+      </div>
+      <div class="ig-hero-row" style="margin-top:24px;">
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">15%</div>
+          <div class="ig-hero-label">Nascent</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">48%</div>
+          <div class="ig-hero-label">Developing</div>
+        </div>
+        <div class="ig-hero-box accent">
+          <div class="ig-hero-val">31%</div>
+          <div class="ig-hero-label">Advanced</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">6%</div>
+          <div class="ig-hero-label">Leading</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Classification based on AA Impact A2 Intelligence Analytics 177-module assessment framework.</div>
+    </div>
+
+    <div class="ig-block">
+      <span class="ig-badge-pill">SECTOR vs ALL-INDIA BENCHMARK</span>
+      <div class="ig-title">Agriculture Food vs National Average &mdash; Key Metrics</div>
+      <div class="ig-desc">
+        Head-to-head comparison of Agriculture Food sector performance against the all-India average
+        across 1,605 BRSR-filing companies on critical ESG dimensions.
+      </div>
+      <div class="ig-compare-grid">
+        <div class="ig-compare-card">
+          <div class="ig-compare-title">Disclosure Quality (DQS)</div>
+          <div class="ig-compare-value">52 <span style="font-size:16px;color:#888;">vs 60</span></div>
+          <div class="ig-compare-sub">Below national average by 8 pts</div>
+        </div>
+        <div class="ig-compare-card">
+          <div class="ig-compare-title">Adoption Rate</div>
+          <div class="ig-compare-value">32.2% <span style="font-size:16px;color:#888;">vs 37.8%</span></div>
+          <div class="ig-compare-sub">Below national adoption rate</div>
+        </div>
+        <div class="ig-compare-card">
+          <div class="ig-compare-title">Filing Growth (3Y)</div>
+          <div class="ig-compare-value">+550% <span style="font-size:16px;color:#888;">vs +1,030%</span></div>
+          <div class="ig-compare-sub">3-year BRSR filing growth</div>
+        </div>
+        <div class="ig-compare-card">
+          <div class="ig-compare-title">SDG Alignment</div>
+          <div class="ig-compare-value" style="font-size:18px;">SDG 2, 6, 15</div>
+          <div class="ig-compare-sub">Primary UN SDG alignment</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Source: AA Impact A2 Intelligence Analytics &mdash; Cross-sector benchmarking database FY2025.</div>
+    </div>
+
+    <div class="ig-block">
+      <span class="ig-badge-pill">GOVERNANCE SNAPSHOT</span>
+      <div class="ig-title">Board Composition & Governance Quality</div>
+      <div class="ig-desc">
+        Governance quality indicators for BRSR-filing Agriculture Food companies, assessing board independence,
+        gender diversity, committee structure, and ESG oversight mechanisms.
+      </div>
+      <div class="ig-meter-row">
+        <div class="ig-meter">
+          <div class="ig-meter-label">Board Independence</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill navy" style="width:46%"></div></div>
+          <div class="ig-meter-val">46%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">Women Directors</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill gold" style="width:40.8%"></div></div>
+          <div class="ig-meter-val">13.6%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">ESG Committee</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill teal" style="width:57%"></div></div>
+          <div class="ig-meter-val">57%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">Sustainability Policy</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill green" style="width:64%"></div></div>
+          <div class="ig-meter-val">64%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">Whistleblower System</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill navy" style="width:67%"></div></div>
+          <div class="ig-meter-val">67%</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Source: AA Impact A2 Intelligence Analytics &mdash; BRSR Section A governance disclosures FY2025.</div>
+    </div>
+
+    <div class="ig-block-dark">
+      <span class="ig-badge-pill">STAKEHOLDER GRIEVANCE ANALYSIS</span>
+      <div class="ig-title">520 Complaints Tracked &mdash; Agriculture Food Sector</div>
+      <div class="ig-desc">
+        Analysis of stakeholder complaints, grievance resolution rates, and complaint categories
+        across BRSR-filing Agriculture Food companies in FY2025.
+      </div>
+      <div class="ig-hero-row">
+        <div class="ig-hero-box accent">
+          <div class="ig-hero-val">520</div>
+          <div class="ig-hero-label">Total Complaints</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">405</div>
+          <div class="ig-hero-label">Resolved (78%)</div>
+          <div class="ig-hero-delta up">Resolved</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">115</div>
+          <div class="ig-hero-label">Pending (22%)</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">34 days</div>
+          <div class="ig-hero-label">Avg Resolution Time</div>
+        </div>
+      </div>
+      <div class="ig-meter-row" style="margin-top:20px;">
+        <div class="ig-meter">
+          <div class="ig-meter-label">Labour Practices</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill gold" style="width:35%"></div></div>
+          <div class="ig-meter-val">35%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">Environment</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill teal" style="width:25%"></div></div>
+          <div class="ig-meter-val">25%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">Community</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill green" style="width:22%"></div></div>
+          <div class="ig-meter-val">22%</div>
+        </div>
+        <div class="ig-meter">
+          <div class="ig-meter-label">Product/Service</div>
+          <div class="ig-meter-track"><div class="ig-meter-fill navy" style="width:18%"></div></div>
+          <div class="ig-meter-val">18%</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Source: AA Impact A2 Intelligence Analytics &mdash; BRSR Principle 5 stakeholder engagement disclosures.</div>
+    </div>
+
+    <div class="ig-block">
+      <span class="ig-badge-pill">FORWARD PROJECTIONS</span>
+      <div class="ig-title">BRSR Adoption Forecast Through 2030</div>
+      <div class="ig-desc">
+        Projected growth trajectory for BRSR adoption in the Agriculture Food sector, based on regulatory
+        roadmap analysis, market dynamics, and AA Impact A2 Intelligence Analytics forecasting models.
+      </div>
+      <div class="ig-flow-row">
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon gold">&#9733;</div>
+          <div class="ig-flow-name">FY 2025</div>
+          <div class="ig-flow-sub">78 filers<br>Current state</div>
+        </div>
+        <div class="ig-flow-arrow">&rarr;</div>
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon teal">&#8599;</div>
+          <div class="ig-flow-name">FY 2026</div>
+          <div class="ig-flow-sub">89 projected<br>+15% growth</div>
+        </div>
+        <div class="ig-flow-arrow">&rarr;</div>
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon navy">&#11014;</div>
+          <div class="ig-flow-name">FY 2028</div>
+          <div class="ig-flow-sub">113 projected<br>Mandatory phase</div>
+        </div>
+        <div class="ig-flow-arrow">&rarr;</div>
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon green">&#10022;</div>
+          <div class="ig-flow-name">FY 2030</div>
+          <div class="ig-flow-sub">140 projected<br>Universal compliance</div>
+        </div>
+      </div>
+      <div class="ig-footnote">Projections based on AA Impact A2 Intelligence Analytics regulatory scenario modelling.</div>
+    </div>
+
+    <div class="ig-block-dark">
+      <span class="ig-badge-pill">METHODOLOGY</span>
+      <div class="ig-title">AA Impact A2 Intelligence Analytics &mdash; Assessment Framework</div>
+      <div class="ig-desc">
+        Our assessment framework evaluates BRSR disclosures across 177 granular modules
+        spanning all 9 NGRBC principles, generating the Data Quality Score (DQS) and maturity classification.
+      </div>
+      <div class="ig-flow-row">
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon navy">1</div>
+          <div class="ig-flow-name">Data Collection</div>
+          <div class="ig-flow-sub">242 companies parsed</div>
+        </div>
+        <div class="ig-flow-arrow">&rarr;</div>
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon gold">2</div>
+          <div class="ig-flow-name">177-Module Analysis</div>
+          <div class="ig-flow-sub">Scored across 9 principles</div>
+        </div>
+        <div class="ig-flow-arrow">&rarr;</div>
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon teal">3</div>
+          <div class="ig-flow-name">DQS Generation</div>
+          <div class="ig-flow-sub">Weighted composite 0-100</div>
+        </div>
+        <div class="ig-flow-arrow">&rarr;</div>
+        <div class="ig-flow-node">
+          <div class="ig-flow-icon green">4</div>
+          <div class="ig-flow-name">Maturity Rating</div>
+          <div class="ig-flow-sub">4-tier classification</div>
+        </div>
+      </div>
+      <div class="ig-hero-row" style="margin-top:24px;">
+        <div class="ig-hero-box accent">
+          <div class="ig-hero-val">177</div>
+          <div class="ig-hero-label">Assessment Modules</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">9</div>
+          <div class="ig-hero-label">NGRBC Principles</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">242</div>
+          <div class="ig-hero-label">Companies Tracked</div>
+        </div>
+        <div class="ig-hero-box">
+          <div class="ig-hero-val">FY22-25</div>
+          <div class="ig-hero-label">Coverage Period</div>
+        </div>
+      </div>
+      <div class="ig-footnote">AA Impact A2 Intelligence Analytics &mdash; Comprehensive BRSR Assessment Series 2026.</div>
+    </div>
+  </section>
+  <footer>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="160" height="64">
+  <rect width="200" height="80" rx="4" fill="#0F2540"/>
+  <line x1="52" y1="12" x2="52" y2="68" stroke="#C5A55A" stroke-width="2"/>
+  <text x="60" y="36" font-family="Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#C5A55A" letter-spacing="1">AA</text>
+  <text x="60" y="55" font-family="Playfair Display,Georgia,serif" font-size="16" font-weight="700" fill="#C5A55A" letter-spacing="2">IMPACT</text>
+  <text x="60" y="70" font-family="Playfair Display,Georgia,serif" font-size="14" font-weight="700" fill="#C5A55A" letter-spacing="3">INC</text>
+  <circle cx="170" cy="55" r="14" fill="#4CAF50" opacity="0.9"/>
+  <path d="M163,55 Q170,42 177,55 Q170,48 163,55Z" fill="#2e7d32"/>
+  <path d="M166,58 Q170,46 174,58 Q170,50 166,58Z" fill="#388e3c"/>
+</svg>
+    </div>
+    <p>BRSR Disclosure & Sustainability Analytics Report</p>
+    
+    <p>AA Impact Inc. | Advancing Responsible Business</p>
+    <p style="margin-top:20px;font-size:11px;color:#666;">
+      This report presents sector-wide BRSR analytics and ESG performance indicators.
+      Data sourced from company BRSR filings and third-party ESG assessments.
+    </p>
+  </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+
+    // Utility: Generate random data for demonstration
+    function generateChartData(labels, min = 20, max = 90) {
+      return labels.map((label, i) => ({
+        label: label,
+        value: Math.floor(Math.random() * (max - min + 1)) + min
+      }));
+    }
+
+    // Chart 1: DQS Distribution
+    function renderChartDQS() {
+      const data = [
+        { score: "50-60", count: 15, pct: 12 },
+        { score: "60-70", count: 35, pct: 28 },
+        { score: "70-80", count: 42, pct: 34 },
+        { score: "80-90", count: 22, pct: 18 },
+        { score: "90+", count: 10, pct: 8 }
+      ];
+
+      const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+      const width = 800 - margin.left - margin.right;
+      const height = 400 - margin.top - margin.bottom;
+
+      const svg = d3.select("#chart-dqs")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const xScale = d3.scaleBand()
+        .domain(data.map(d => d.score))
+        .range([0, width])
+        .padding(0.3);
+
+      const yScale = d3.scaleLinear()
+        .domain([0, d3.max(data, d => d.count)])
+        .range([height, 0]);
+
+      svg.selectAll(".bar")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("class", "bar")
+        .attr("x", d => xScale(d.score))
+        .attr("y", d => yScale(d.count))
+        .attr("width", xScale.bandwidth())
+        .attr("height", d => height - yScale(d.count))
+        .attr("fill", (d, i) => ["#0F2540", "#1a4d6d", "#2666a0", "#4CAF50", "#2e7d32"][i]);
+
+      svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(xScale))
+        .style("font-size", "12px");
+
+      svg.append("g")
+        .call(d3.axisLeft(yScale))
+        .style("font-size", "12px");
+
+      svg.append("text")
+        .attr("x", width / 2)
+        .attr("y", height + 35)
+        .style("text-anchor", "middle")
+        .style("font-size", "12px")
+        .text("Data Quality Score Range");
+
+      svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x", 0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .style("font-size", "12px")
+        .text("Number of Companies");
+    }
+
+    // Chart 2: Growth Trajectory
+    function renderChartGrowth() {
+      const data = [
+        { year: 2022, filers: 65, total: 1722 },
+        { year: 2023, filers: 185, total: 1722 },
+        { year: 2024, filers: 335, total: 1722 },
+        { year: 2025, filers: 570, total: 1722 }
+      ];
+
+      const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+      const width = 800 - margin.left - margin.right;
+      const height = 400 - margin.top - margin.bottom;
+
+      const svg = d3.select("#chart-growth")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const xScale = d3.scaleLinear()
+        .domain(d3.extent(data, d => d.year))
+        .range([0, width]);
+
+      const yScale = d3.scaleLinear()
+        .domain([0, 600])
+        .range([height, 0]);
+
+      const line = d3.line()
+        .x(d => xScale(d.year))
+        .y(d => yScale(d.filers));
+
+      const path = svg.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "#0F2540")
+        .attr("stroke-width", 3)
+        .attr("d", line);
+
+      svg.selectAll(".dot")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("cx", d => xScale(d.year))
+        .attr("cy", d => yScale(d.filers))
+        .attr("r", 5)
+        .attr("fill", "#4CAF50");
+
+      svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(xScale).tickFormat(d3.format("d")))
+        .style("font-size", "12px");
+
+      svg.append("g")
+        .call(d3.axisLeft(yScale))
+        .style("font-size", "12px");
+    }
+
+    // Chart 3: Energy Sources
+    function renderChartEnergy() {
+      const data = [
+        { source: "Coal", pct: 35 },
+        { source: "Natural Gas", pct: 25 },
+        { source: "Renewable", pct: 20 },
+        { source: "Nuclear", pct: 12 },
+        { source: "Other", pct: 8 }
+      ];
+
+      const width = 800;
+      const height = 400;
+      const radius = Math.min(width, height) / 2 - 40;
+
+      const svg = d3.select("#chart-env-metrics")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", `translate(${width/2},${height/2})`);
+
+      const color = ["#C5A55A", "#8B7355", "#4CAF50", "#2196F3", "#FF9500"];
+
+      const pie = d3.pie().value(d => d.pct);
+      const arc = d3.arc().innerRadius(0).outerRadius(radius);
+
+      svg.selectAll(".arc")
+        .data(pie(data))
+        .enter()
+        .append("path")
+        .attr("class", "arc")
+        .attr("d", arc)
+        .attr("fill", (d, i) => color[i]);
+
+      svg.selectAll(".label")
+        .data(pie(data))
+        .enter()
+        .append("text")
+        .attr("transform", d => `translate(${arc.centroid(d)})`)
+        .attr("text-anchor", "middle")
+        .style("font-size", "12px")
+        .style("font-weight", "600")
+        .style("fill", "#fff")
+        .text(d => `${d.data.pct}%`);
+    }
+
+    // Chart 4: Diversity Metrics
+    function renderChartDiversity() {
+      const data = [
+        { category: "Women", pct: 28 },
+        { category: "Men", pct: 72 }
+      ];
+
+      const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+      const width = 800 - margin.left - margin.right;
+      const height = 400 - margin.top - margin.bottom;
+
+      const svg = d3.select("#chart-diversity")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const xScale = d3.scaleBand()
+        .domain(data.map(d => d.category))
+        .range([0, width])
+        .padding(0.5);
+
+      const yScale = d3.scaleLinear()
+        .domain([0, 100])
+        .range([height, 0]);
+
+      svg.selectAll(".bar")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("x", d => xScale(d.category))
+        .attr("y", d => yScale(d.pct))
+        .attr("width", xScale.bandwidth())
+        .attr("height", d => height - yScale(d.pct))
+        .attr("fill", (d, i) => i === 0 ? "#FF6B9D" : "#0F2540");
+
+      svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(xScale))
+        .style("font-size", "12px");
+
+      svg.append("g")
+        .call(d3.axisLeft(yScale))
+        .style("font-size", "12px");
+    }
+
+    // Chart 5: Governance Radar
+    function renderChartRadar() {
+      const data = [
+        { axis: "Board Governance", value: 75 },
+        { axis: "Ethics & Compliance", value: 68 },
+        { axis: "Risk Management", value: 62 },
+        { axis: "Stakeholder Engagement", value: 58 },
+        { axis: "ESG Strategy", value: 55 }
+      ];
+
+      const width = 500;
+      const height = 500;
+      const radius = Math.min(width, height) / 2 - 40;
+
+      const svg = d3.select("#chart-radar")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", `translate(${width/2},${height/2})`);
+
+      const angleSlice = (Math.PI * 2) / data.length;
+
+      // Concentric circles
+      for (let i = 1; i <= 5; i++) {
+        const r = (radius / 5) * i;
+        svg.append("circle")
+          .attr("r", r)
+          .attr("fill", "none")
+          .attr("stroke", "#e0e0dc")
+          .attr("stroke-width", 1);
+      }
+
+      // Radial axes
+      data.forEach((d, i) => {
+        const angle = angleSlice * i - Math.PI / 2;
+        const x = radius * Math.cos(angle);
+        const y = radius * Math.sin(angle);
+        svg.append("line")
+          .attr("x1", 0)
+          .attr("y1", 0)
+          .attr("x2", x)
+          .attr("y2", y)
+          .attr("stroke", "#e0e0dc")
+          .attr("stroke-width", 1);
+      });
+
+      // Data polygon
+      const radarLine = d3.lineRadial()
+        .angle((d, i) => angleSlice * i)
+        .radius(d => (d.value / 100) * radius);
+
+      svg.append("path")
+        .datum(data)
+        .attr("d", radarLine)
+        .attr("fill", "#4CAF50")
+        .attr("fill-opacity", 0.25)
+        .attr("stroke", "#2e7d32")
+        .attr("stroke-width", 2);
+
+      svg.selectAll(".dot")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("cx", (d, i) => (d.value / 100) * radius * Math.cos(angleSlice * i - Math.PI / 2))
+        .attr("cy", (d, i) => (d.value / 100) * radius * Math.sin(angleSlice * i - Math.PI / 2))
+        .attr("r", 4)
+        .attr("fill", "#2e7d32");
+
+      // Labels
+      svg.selectAll(".label")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("x", (d, i) => 1.3 * radius * Math.cos(angleSlice * i - Math.PI / 2))
+        .attr("y", (d, i) => 1.3 * radius * Math.sin(angleSlice * i - Math.PI / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "11px")
+        .style("fill", "#333")
+        .text(d => d.axis);
+    }
+
+    // Chart 6: Heatmap
+    function renderChartHeatmap() {
+      const data = [
+        { principle: "Governance", 2023: 65, 2024: 70, 2025: 75 },
+        { principle: "Rights", 2023: 58, 2024: 62, 2025: 68 },
+        { principle: "Wellbeing", 2023: 60, 2024: 64, 2025: 69 },
+        { principle: "Environment", 2023: 52, 2024: 58, 2025: 62 },
+        { principle: "Ethics", 2023: 62, 2024: 67, 2025: 72 }
+      ];
+
+      const margin = { top: 20, right: 20, bottom: 40, left: 100 };
+      const width = 800 - margin.left - margin.right;
+      const height = 300 - margin.top - margin.bottom;
+
+      const svg = d3.select("#chart-heatmap")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const cellWidth = width / 3;
+      const cellHeight = height / 5;
+
+      const colorScale = d3.scaleLinear()
+        .domain([50, 75])
+        .range(["#fff3e0", "#4CAF50"]);
+
+      data.forEach((row, i) => {
+        [2023, 2024, 2025].forEach((year, j) => {
+          const value = row[year];
+          svg.append("rect")
+            .attr("x", j * cellWidth)
+            .attr("y", i * cellHeight)
+            .attr("width", cellWidth)
+            .attr("height", cellHeight)
+            .attr("fill", colorScale(value))
+            .attr("stroke", "#ddd");
+
+          svg.append("text")
+            .attr("x", j * cellWidth + cellWidth / 2)
+            .attr("y", i * cellHeight + cellHeight / 2)
+            .attr("text-anchor", "middle")
+            .attr("dy", "0.35em")
+            .style("font-size", "12px")
+            .style("font-weight", "600")
+            .text(value);
+        });
+      });
+
+      // Y-axis labels
+      svg.selectAll(".ylabel")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("x", -10)
+        .attr("y", (d, i) => i * cellHeight + cellHeight / 2)
+        .attr("dy", "0.35em")
+        .attr("text-anchor", "end")
+        .style("font-size", "12px")
+        .text(d => d.principle);
+
+      // X-axis labels
+      [2023, 2024, 2025].forEach((year, j) => {
+        svg.append("text")
+          .attr("x", j * cellWidth + cellWidth / 2)
+          .attr("y", -5)
+          .attr("text-anchor", "middle")
+          .style("font-size", "12px")
+          .text(year);
+      });
+    }
+
+    // Chart 7: Benchmark
+    function renderChartBenchmark() {
+      const data = [
+        { sector: "Our Sector", score: 64 },
+        { sector: "Peer Avg", score: 58 },
+        { sector: "Leader", score: 78 },
+        { sector: "Laggard", score: 42 }
+      ];
+
+      const margin = { top: 20, right: 20, bottom: 40, left: 100 };
+      const width = 800 - margin.left - margin.right;
+      const height = 400 - margin.top - margin.bottom;
+
+      const svg = d3.select("#chart-benchmark")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const xScale = d3.scaleLinear()
+        .domain([0, 100])
+        .range([0, width]);
+
+      const yScale = d3.scaleBand()
+        .domain(data.map(d => d.sector))
+        .range([0, height])
+        .padding(0.4);
+
+      svg.selectAll(".bar")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("y", d => yScale(d.sector))
+        .attr("width", d => xScale(d.score))
+        .attr("height", yScale.bandwidth())
+        .attr("fill", (d, i) => i === 0 ? "#0F2540" : "#C5A55A");
+
+      svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(xScale))
+        .style("font-size", "12px");
+
+      svg.append("g")
+        .call(d3.axisLeft(yScale))
+        .style("font-size", "12px");
+    }
+
+    // Chart 8: Forecast
+    function renderChartForecast() {
+      const data = [
+        { year: 2025, filers: 570 },
+        { year: 2026, filers: 720 },
+        { year: 2027, filers: 855 },
+        { year: 2028, filers: 980 },
+        { year: 2029, filers: 1050 },
+        { year: 2030, filers: 1100 }
+      ];
+
+      const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+      const width = 800 - margin.left - margin.right;
+      const height = 400 - margin.top - margin.bottom;
+
+      const svg = d3.select("#chart-forecast")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const xScale = d3.scaleLinear()
+        .domain(d3.extent(data, d => d.year))
+        .range([0, width]);
+
+      const yScale = d3.scaleLinear()
+        .domain([0, 1200])
+        .range([height, 0]);
+
+      const area = d3.area()
+        .x(d => xScale(d.year))
+        .y0(height)
+        .y1(d => yScale(d.filers));
+
+      svg.append("path")
+        .datum(data)
+        .attr("d", area)
+        .attr("fill", "#4CAF50")
+        .attr("fill-opacity", 0.2);
+
+      const line = d3.line()
+        .x(d => xScale(d.year))
+        .y(d => yScale(d.filers));
+
+      svg.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "#2e7d32")
+        .attr("stroke-width", 3)
+        .attr("d", line);
+
+      svg.selectAll(".dot")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("cx", d => xScale(d.year))
+        .attr("cy", d => yScale(d.filers))
+        .attr("r", 5)
+        .attr("fill", "#2e7d32");
+
+      svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(xScale).tickFormat(d3.format("d")))
+        .style("font-size", "12px");
+
+      svg.append("g")
+        .call(d3.axisLeft(yScale))
+        .style("font-size", "12px");
+    }
+
+    // Smooth scroll for TOC links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Initialize all charts
+    window.addEventListener('load', () => {
+      // Clear static SVG fallbacks before D3 renders
+      document.querySelectorAll('svg[id^="chart-"]').forEach(el => { el.innerHTML = ''; });
+      setTimeout(() => {
+        renderChartDQS();
+        renderChartGrowth();
+        renderChartEnergy();
+        renderChartDiversity();
+        renderChartRadar();
+        renderChartHeatmap();
+        renderChartBenchmark();
+        renderChartForecast();
+        renderChartEnergyMix();
+        renderChartSocial();
+        renderChartGovernance();
+        renderDonutDQS();
+        renderStackedGrowth();
+        renderGaugeDQS();
+      }, 100);
+    });
+
+    
+
+    // Additional D3 Visualizations
+
+    // Donut Chart: DQS Distribution
+    function renderDonutDQS() {
+      var container = document.getElementById('chart-donut-dqs');
+      if (!container) return;
+      var w = 400, h = 400, r = 150;
+      var data = [
+        { label: 'Leading (80+)', value: 10, color: '#4CAF50' },
+        { label: 'Advanced (60-80)', value: 28, color: '#26A69A' },
+        { label: 'Developing (40-60)', value: 48, color: '#C5A55A' },
+        { label: 'Nascent (<40)', value: 14, color: '#0F2540' }
+      ];
+      var svg = d3.select(container);
+      var g = svg.append('g').attr('transform', 'translate(' + w/2 + ',' + h/2 + ')');
+      var pie = d3.pie().value(function(d) { return d.value; }).sort(null);
+      var arc = d3.arc().innerRadius(r * 0.55).outerRadius(r);
+      g.selectAll('path').data(pie(data)).enter().append('path')
+        .attr('d', arc).attr('fill', function(d) { return d.data.color; })
+        .attr('stroke', '#fff').attr('stroke-width', 2);
+      g.append('text').attr('text-anchor','middle').attr('dy','-0.2em')
+        .style('font-size','36px').style('font-weight','700').style('fill','#0F2540')
+        .style('font-family','Playfair Display,serif').text('52');
+      g.append('text').attr('text-anchor','middle').attr('dy','1.4em')
+        .style('font-size','12px').style('fill','#888').text('DQS Score');
+    }
+
+    // Stacked bar: YoY Filing by maturity
+    function renderStackedGrowth() {
+      var container = document.getElementById('chart-stacked-growth');
+      if (!container) return;
+      var margin = { top: 30, right: 120, bottom: 40, left: 60 };
+      var width = 800 - margin.left - margin.right;
+      var height = 350 - margin.top - margin.bottom;
+      var svg = d3.select(container);
+      var g = svg.append('g').attr('transform','translate(' + margin.left + ',' + margin.top + ')');
+      var data = [
+        { year: 'FY22', nascent: 5, developing: 4, advanced: 1, leading: 0 },
+        { year: 'FY23', nascent: 11, developing: 12, advanced: 6, leading: 2 },
+        { year: 'FY24', nascent: 14, developing: 21, advanced: 15, leading: 5 },
+        { year: 'FY25', nascent: 11, developing: 27, advanced: 27, leading: 11 }
+      ];
+      var keys = ['nascent','developing','advanced','leading'];
+      var colors = { nascent:'#0F2540', developing:'#C5A55A', advanced:'#26A69A', leading:'#4CAF50' };
+      var stack = d3.stack().keys(keys);
+      var series = stack(data);
+      var x = d3.scaleBand().domain(data.map(function(d){return d.year;})).range([0,width]).padding(0.35);
+      var yMax = d3.max(series, function(s) { return d3.max(s, function(d) { return d[1]; }); });
+      var y = d3.scaleLinear().domain([0, yMax]).nice().range([height,0]);
+      g.append('g').attr('transform','translate(0,'+height+')').call(d3.axisBottom(x));
+      g.append('g').call(d3.axisLeft(y).ticks(5));
+      series.forEach(function(s) {
+        g.selectAll('.bar-'+s.key).data(s).enter().append('rect')
+          .attr('x', function(d){return x(d.data.year);}).attr('y', function(d){return y(d[1]);})
+          .attr('height', function(d){return y(d[0]) - y(d[1]);}).attr('width', x.bandwidth())
+          .attr('fill', colors[s.key]).attr('rx', 2);
+      });
+      var lg = svg.append('g').attr('transform','translate(' + (width + margin.left + 10) + ',' + (margin.top + 20) + ')');
+      keys.forEach(function(k, i) {
+        var row = lg.append('g').attr('transform','translate(0,'+i*22+')');
+        row.append('rect').attr('width',12).attr('height',12).attr('rx',2).attr('fill',colors[k]);
+        row.append('text').attr('x',16).attr('y',10).style('font-size','11px').style('fill','#666')
+          .text(k.charAt(0).toUpperCase() + k.slice(1));
+      });
+    }
+
+    // Gauge: Overall DQS
+    function renderGaugeDQS() {
+      var container = document.getElementById('chart-gauge-dqs');
+      if (!container) return;
+      var w = 400, h = 250;
+      var svg = d3.select(container);
+      var g = svg.append('g').attr('transform','translate(' + w/2 + ',' + (h - 40) + ')');
+      var scale = d3.scaleLinear().domain([0, 100]).range([-Math.PI/2, Math.PI/2]);
+      // Background arc
+      g.append('path').attr('d', d3.arc().innerRadius(80).outerRadius(100).startAngle(-Math.PI/2).endAngle(Math.PI/2)())
+        .attr('fill', '#e8e8e6');
+      // Colored sections
+      var sections = [{end:40,color:'#0F2540'},{end:60,color:'#C5A55A'},{end:80,color:'#26A69A'},{end:100,color:'#4CAF50'}];
+      var prevAngle = -Math.PI/2;
+      sections.forEach(function(s) {
+        var endAngle = scale(s.end);
+        g.append('path').attr('d', d3.arc().innerRadius(80).outerRadius(100).startAngle(prevAngle).endAngle(endAngle)())
+          .attr('fill', s.color);
+        prevAngle = endAngle;
+      });
+      // Needle
+      var needleAngle = scale(52);
+      g.append('line').attr('x1',0).attr('y1',0)
+        .attr('x2', 70 * Math.cos(needleAngle - Math.PI/2))
+        .attr('y2', 70 * Math.sin(needleAngle - Math.PI/2))
+        .attr('stroke','#0F2540').attr('stroke-width',3).attr('stroke-linecap','round');
+      g.append('circle').attr('r',6).attr('fill','#0F2540');
+      g.append('text').attr('text-anchor','middle').attr('dy','-20')
+        .style('font-size','32px').style('font-weight','700').style('fill','#0F2540')
+        .style('font-family','Playfair Display,serif').text('52');
+      g.append('text').attr('text-anchor','middle').attr('dy','0')
+        .style('font-size','11px').style('fill','#888').text('Data Quality Score');
+    }
+
+
+
+
+    function renderChartEnergyMix() {
+      var el = document.getElementById('chart-energy');
+      if (!el) return;
+      var margin = {top:20,right:100,bottom:40,left:120};
+      var width = 800-margin.left-margin.right;
+      var height = 400-margin.top-margin.bottom;
+      var svg = d3.select(el);
+      var g = svg.append('g').attr('transform','translate('+margin.left+','+margin.top+')');
+      var data = [
+        {source:'Coal/Fossil',pct:45},
+        {source:'Natural Gas',pct:21},
+        {source:'Renewable',pct:15},
+        {source:'Grid (Mixed)',pct:13},
+        {source:'Captive Power',pct:9}
+      ];
+      var y = d3.scaleBand().domain(data.map(function(d){return d.source;})).range([0,height]).padding(0.3);
+      var x = d3.scaleLinear().domain([0,d3.max(data,function(d){return d.pct;})*1.2]).range([0,width]);
+      g.append('g').call(d3.axisLeft(y)).selectAll('text').style('font-size','12px');
+      g.append('g').attr('transform','translate(0,'+height+')').call(d3.axisBottom(x).ticks(5).tickFormat(function(d){return d+'%';})).selectAll('text').style('font-size','11px');
+      var colors = ['#0F2540','#C5A55A','#4CAF50','#26A69A','#8B7355'];
+      g.selectAll('.bar').data(data).enter().append('rect')
+        .attr('y',function(d){return y(d.source);}).attr('x',0)
+        .attr('height',y.bandwidth()).attr('width',function(d){return x(d.pct);})
+        .attr('fill',function(d,i){return colors[i];}).attr('rx',3);
+      g.selectAll('.lbl').data(data).enter().append('text')
+        .attr('y',function(d){return y(d.source)+y.bandwidth()/2+4;})
+        .attr('x',function(d){return x(d.pct)+8;})
+        .text(function(d){return d.pct+'%';})
+        .style('font-size','12px').style('font-weight','600').style('fill','#0F2540');
+    }
+
+    function renderChartSocial() {
+      var el = document.getElementById('chart-social');
+      if (!el) return;
+      var margin = {top:30,right:30,bottom:50,left:60};
+      var width = 800-margin.left-margin.right;
+      var height = 400-margin.top-margin.bottom;
+      var svg = d3.select(el);
+      var g = svg.append('g').attr('transform','translate('+margin.left+','+margin.top+')');
+      var data = [
+        {cat:'Training Hours',sector:18,national:30},
+        {cat:'Women (%)',sector:15.3,national:18},
+        {cat:'Wellbeing Score',sector:57,national:62},
+        {cat:'Safety Rating',sector:60,national:68},
+        {cat:'Grievance Resolution',sector:78,national:72}
+      ];
+      var x0 = d3.scaleBand().domain(data.map(function(d){return d.cat;})).range([0,width]).padding(0.25);
+      var x1 = d3.scaleBand().domain(['sector','national']).range([0,x0.bandwidth()]).padding(0.08);
+      var y = d3.scaleLinear().domain([0,100]).range([height,0]);
+      g.append('g').attr('transform','translate(0,'+height+')').call(d3.axisBottom(x0)).selectAll('text').style('font-size','11px').attr('transform','rotate(-15)').style('text-anchor','end');
+      g.append('g').call(d3.axisLeft(y).ticks(5)).selectAll('text').style('font-size','11px');
+      var groups = g.selectAll('.grp').data(data).enter().append('g').attr('transform',function(d){return 'translate('+x0(d.cat)+',0)';});
+      groups.append('rect').attr('x',function(){return x1('sector');}).attr('y',function(d){return y(d.sector);}).attr('width',x1.bandwidth()).attr('height',function(d){return height-y(d.sector);}).attr('fill','#0F2540').attr('rx',3);
+      groups.append('rect').attr('x',function(){return x1('national');}).attr('y',function(d){return y(d.national);}).attr('width',x1.bandwidth()).attr('height',function(d){return height-y(d.national);}).attr('fill','#C5A55A').attr('rx',3);
+      // Legend
+      var lg = svg.append('g').attr('transform','translate('+(width-60)+',10)');
+      lg.append('rect').attr('width',12).attr('height',12).attr('rx',2).attr('fill','#0F2540');
+      lg.append('text').attr('x',16).attr('y',10).text('Sector').style('font-size','11px').style('fill','#666');
+      lg.append('rect').attr('y',18).attr('width',12).attr('height',12).attr('rx',2).attr('fill','#C5A55A');
+      lg.append('text').attr('x',16).attr('y',28).text('National').style('font-size','11px').style('fill','#666');
+    }
+
+    function renderChartGovernance() {
+      var el = document.getElementById('chart-governance');
+      if (!el) return;
+      var margin = {top:20,right:80,bottom:20,left:160};
+      var width = 800-margin.left-margin.right;
+      var height = 400-margin.top-margin.bottom;
+      var svg = d3.select(el);
+      var g = svg.append('g').attr('transform','translate('+margin.left+','+margin.top+')');
+      var data = [
+        {dim:'Board Independence',score:62},
+        {dim:'Ethics & Compliance',score:60},
+        {dim:'Risk Management',score:47},
+        {dim:'Stakeholder Engagement',score:44},
+        {dim:'ESG Strategy',score:49},
+        {dim:'Disclosure Quality',score:52},
+        {dim:'Sustainability Policy',score:64},
+        {dim:'Whistleblower System',score:67}
+      ];
+      var y = d3.scaleBand().domain(data.map(function(d){return d.dim;})).range([0,height]).padding(0.25);
+      var x = d3.scaleLinear().domain([0,100]).range([0,width]);
+      g.append('g').call(d3.axisLeft(y)).selectAll('text').style('font-size','12px');
+      // Background bars
+      g.selectAll('.bg').data(data).enter().append('rect')
+        .attr('y',function(d){return y(d.dim);}).attr('x',0)
+        .attr('height',y.bandwidth()).attr('width',width)
+        .attr('fill','#f0f0ed').attr('rx',4);
+      // Value bars
+      var colors = ['#0F2540','#C5A55A','#26A69A','#4CAF50','#0F2540','#C5A55A','#26A69A','#4CAF50'];
+      g.selectAll('.val').data(data).enter().append('rect')
+        .attr('y',function(d){return y(d.dim);}).attr('x',0)
+        .attr('height',y.bandwidth()).attr('width',function(d){return x(d.score);})
+        .attr('fill',function(d,i){return colors[i];}).attr('rx',4);
+      // Score labels
+      g.selectAll('.score').data(data).enter().append('text')
+        .attr('y',function(d){return y(d.dim)+y.bandwidth()/2+4;})
+        .attr('x',function(d){return x(d.score)+6;})
+        .text(function(d){return d.score+'%';})
+        .style('font-size','12px').style('font-weight','700').style('fill','#0F2540');
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AA Impact Inc. — BRSR Governance & Disclosure Readiness</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   R2D3-STYLE SCROLL NARRATIVE
+   ═══════════════════════════════════════ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0F2540;
+  --navy-light: #1a3a5c;
+  --gold: #C5A55A;
+  --gold-light: #e8d5a0;
+  --gold-pale: #f5edda;
+  --green: #4CAF50;
+  --green-light: #81C784;
+  --teal: #26A69A;
+  --warm-bg: #FAFAF7;
+  --text-primary: #2c2c2c;
+  --text-secondary: #666;
+  --text-light: #999;
+  --border: #e8e4dc;
+  --col-width: 440px;
+  --vis-width: 520px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--warm-bg);
+  color: var(--text-primary);
+  line-height: 1.78;
+  font-size: 18px;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Title Section ── */
+.title-section {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 120px 30px 80px;
+  text-align: center;
+}
+
+.title-section .brand {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 30px;
+}
+
+.title-section h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.title-section h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.title-section .subtitle {
+  font-size: 20px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto 40px;
+}
+
+.title-section .meta {
+  font-size: 13px;
+  color: var(--text-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 40px auto;
+}
+
+/* ── Scroll Narrative Sections ── */
+.scroll-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 30px;
+}
+
+.scroll-section .text-column {
+  width: var(--col-width);
+  padding: 60px 0 200px;
+  flex-shrink: 0;
+}
+
+.scroll-section .vis-column {
+  width: var(--vis-width);
+  flex-shrink: 0;
+  margin-left: 60px;
+}
+
+.vis-sticky {
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Text Styling ── */
+.step {
+  margin-bottom: 50vh;
+  opacity: 0.15;
+  transition: opacity 0.6s ease;
+}
+
+.step.is-active {
+  opacity: 1;
+}
+
+.step:last-child {
+  margin-bottom: 30vh;
+}
+
+.step p {
+  margin-bottom: 1.4em;
+  font-size: 18px;
+  line-height: 1.78;
+}
+
+.step h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.step h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.step .highlight {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.step .gold { color: var(--gold); font-weight: 600; }
+.step .green { color: var(--green); font-weight: 600; }
+.step .navy { color: var(--navy); font-weight: 600; }
+
+.step .big-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 72px;
+  color: var(--navy);
+  line-height: 1;
+  margin: 20px 0;
+  display: block;
+}
+
+.step .big-number .unit {
+  font-size: 28px;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+.step .annotation {
+  font-size: 14px;
+  color: var(--text-light);
+  border-left: 2px solid var(--gold-light);
+  padding-left: 16px;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+/* ── Full-Width Interlude ── */
+.interlude {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.interlude h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.interlude p {
+  font-size: 19px;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── SVG Visualization Styling ── */
+svg text {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.axis text {
+  font-size: 12px;
+  fill: var(--text-light);
+}
+
+.axis line, .axis path {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.grid line {
+  stroke: var(--border);
+  stroke-dasharray: 2, 4;
+  opacity: 0.5;
+}
+
+.bar-gold { fill: var(--gold); }
+.bar-navy { fill: var(--navy); }
+.bar-green { fill: var(--green); }
+.bar-gold-light { fill: var(--gold-light); }
+
+.line-gold { stroke: var(--gold); fill: none; stroke-width: 2.5; }
+.line-navy { stroke: var(--navy); fill: none; stroke-width: 2.5; }
+.line-green { stroke: var(--green); fill: none; stroke-width: 2.5; }
+
+.dot-gold { fill: var(--gold); }
+.dot-navy { fill: var(--navy); }
+.dot-green { fill: var(--green); }
+
+.area-gold { fill: var(--gold-pale); opacity: 0.5; }
+.area-navy { fill: rgba(15,37,64,0.08); }
+
+.vis-label {
+  font-size: 13px;
+  fill: var(--text-secondary);
+  font-weight: 400;
+}
+
+.vis-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  fill: var(--navy);
+}
+
+.vis-annotation {
+  font-size: 12px;
+  fill: var(--text-light);
+  font-style: italic;
+}
+
+/* Animated transitions */
+.bar-enter {
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Section Separators ── */
+.section-sep {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--gold);
+  font-size: 24px;
+  letter-spacing: 12px;
+}
+
+/* ── Footer ── */
+footer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 80px 30px 120px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+footer .brand-footer {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+footer p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1000px) {
+  .scroll-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .scroll-section .text-column {
+    width: 100%;
+    max-width: 600px;
+    padding-bottom: 40px;
+  }
+  .scroll-section .vis-column {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 0;
+  }
+  .vis-sticky {
+    position: relative;
+    top: 0;
+    height: 400px;
+    margin-bottom: 40px;
+  }
+  .step { margin-bottom: 60px; }
+}
+
+/* ── Dot Grid Background (subtle) ── */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle, rgba(15,37,64,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: -1;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ TITLE ═══════════════ -->
+<div class="title-section">
+  <div class="brand">AA Impact Inc.</div>
+  <h1>Governance &<br><em>Disclosure Readiness</em></h1>
+  <p class="subtitle">A visual exploration of how 1,605 Indian listed companies are navigating SEBI's Business Responsibility and Sustainability Reporting mandate — and what the data reveals about corporate India's ESG maturity.</p>
+  <div class="divider"></div>
+  <p class="meta">Based on 3,638 BRSR filings · 2022–2025 · 980+ data fields</p>
+</div>
+
+<div class="section-sep">⁕ ⁕ ⁕</div>
+
+<!-- ═══════════════ SECTION 1: THE FILING EXPLOSION ═══════════════ -->
+<div class="scroll-section" id="section-filing">
+  <div class="text-column">
+
+    <div class="step" data-step="filing-1">
+      <h2>The Filing Explosion</h2>
+      <p>In 2022, when SEBI first required the top 1,000 listed companies to file Business Responsibility and Sustainability Reports, only <span class="highlight">173 companies</span> managed to comply. The mandate was ambitious. The infrastructure wasn't ready.</p>
+      <p>Companies scrambled. Sustainability teams were assembled overnight. Consultants were hired. Data that had never been systematically collected — energy consumption, water withdrawal, waste generation, workforce demographics — suddenly needed to be quantified, verified, and published.</p>
+    </div>
+
+    <div class="step" data-step="filing-2">
+      <span class="big-number">1,214 <span class="unit">companies</span></span>
+      <p>By 2025, the picture had transformed. <span class="highlight">1,214 companies</span> were actively filing BRSR reports — a <span class="gold">seven-fold increase</span> in just three years. This isn't gradual adoption. This is a compliance avalanche.</p>
+      <p>The growth curve tells a specific story: a tentative start in 2022, an explosive catch-up in 2023 when filings jumped to 1,074, then a steady climb as the remaining companies fell into line. India now has one of the world's largest corporate sustainability disclosure ecosystems.</p>
+    </div>
+
+    <div class="step" data-step="filing-3">
+      <h3>But filing isn't the same as substance</h3>
+      <p>The EU's Corporate Sustainability Reporting Directive covers 50,000 companies. Japan's TCFD mandate reaches 4,000. China requires 1,400. India's 1,214 reporters account for just 2% of the ~50,000 listed companies — but they represent over <span class="highlight">65% of total market capitalization</span>.</p>
+      <p>The question that haunts this data is whether India's BRSR ecosystem is producing genuine transparency or sophisticated compliance theater. The answer, as we'll see, depends entirely on which metric you examine.</p>
+    </div>
+
+    <div class="step" data-step="filing-4">
+      <p class="annotation">The BRSR framework encompasses nine principles derived from the National Guidelines on Responsible Business Conduct (NGRBC), aligned with the UN Guiding Principles on Business and Human Rights. It is arguably more comprehensive than most international ESG frameworks.</p>
+      <p>What makes India's trajectory remarkable is the speed. The EU took nearly a decade from the Non-Financial Reporting Directive (2014) to CSRD implementation (2024). India compressed a comparable journey into three years. The cost of that compression shows up in data quality — approximately 30% of early filings contain significant gaps in environmental metrics — but the directional momentum is unmistakable.</p>
+    </div>
+
+  </div>
+
+  <div class="vis-column">
+    <div class="vis-sticky">
+      <svg id="vis-filing" width="480" height="400"></svg>
+    </div>
+  </div>
+</div>
+
+<div class="section-sep">⁕ ⁕ ⁕</div>
+
+<!-- ═══════════════ SECTION 2: THE NINE PRINCIPLES ═══════════════ -->
+<div class="scroll-section" id="section-principles">
+  <div class="text-column">
+
+    <div class="step" data-step="principles-1">
+      <h2>Nine Principles, Uneven Mastery</h2>
+      <p>The BRSR framework is built on nine NGRBC principles — from ethical governance (P1) to consumer responsibility (P9). In theory, each principle receives equal weight. In practice, corporate India has created a stark hierarchy of attention.</p>
+      <p><span class="highlight">Principles 1 through 5</span> — covering ethics, product safety, employee wellbeing, stakeholder engagement, and human rights — see near-universal policy adoption. These are the "comfortable" principles: they align with existing corporate governance codes, HR policies, and customer-facing commitments.</p>
+    </div>
+
+    <div class="step" data-step="principles-2">
+      <h3>The laggard principles</h3>
+      <p>Then there are the principles that expose India Inc.'s ESG blind spots. <span class="gold">Principle 7 — public policy advocacy</span> — remains the most neglected, with fewer than 15% of companies disclosing meaningful engagement. Principle 8 (inclusive growth) and Principle 9 (consumer value) follow close behind.</p>
+      <p>This isn't random. The avoided principles require companies to look beyond their factory walls — to engage with policy, communities, and systemic issues. They demand a shift from ESG-as-compliance to ESG-as-strategy, and most companies aren't there yet.</p>
+    </div>
+
+    <div class="step" data-step="principles-3">
+      <p>The manufacturing sector leads on environmental principles but lags on social ones. Financial services excels at governance but barely registers on environmental metrics. IT companies report strong workforce practices but struggle with supply chain transparency.</p>
+      <p>This sectoral divergence creates an interesting pattern: <span class="green">no sector has achieved balanced ESG maturity</span>. Every industry has blind spots, and the blind spots are predictable — they correspond to the issues each sector finds most uncomfortable or operationally challenging to address.</p>
+    </div>
+
+  </div>
+
+  <div class="vis-column">
+    <div class="vis-sticky">
+      <svg id="vis-principles" width="480" height="400"></svg>
+    </div>
+  </div>
+</div>
+
+<div class="section-sep">⁕ ⁕ ⁕</div>
+
+<!-- ═══════════════ SECTION 3: CSR SPENDING ═══════════════ -->
+<div class="interlude">
+  <h2>₹16,102 Crore</h2>
+  <div class="divider"></div>
+  <p>That's the aggregate CSR expenditure reported by BRSR filers in the most recent cycle. India remains the only major economy with a mandatory CSR spending requirement — 2% of average net profits for qualifying companies. But how this money flows reveals as much as how much flows.</p>
+</div>
+
+<div class="section-sep">⁕ ⁕ ⁕</div>
+
+<!-- ═══════════════ SECTION 4: SECTOR DIVERGENCE ═══════════════ -->
+<div class="scroll-section" id="section-sectors">
+  <div class="text-column">
+
+    <div class="step" data-step="sectors-1">
+      <h2>The Sector Map</h2>
+      <p>India's 1,605 unique BRSR-reporting companies span ten distinct sectors. <span class="highlight">Manufacturing dominates</span> with 570 active filers — nearly half the total. Financial services follows with 139, then IT & Technology at 76.</p>
+      <p>The smaller sectors — real estate (29), agriculture (27), transport (25) — are where the most interesting stories hide. Small sample sizes amplify anomalies, but they also reveal patterns that get lost in the manufacturing juggernaut.</p>
+    </div>
+
+    <div class="step" data-step="sectors-2">
+      <h3>Size doesn't predict sophistication</h3>
+      <p>Financial services companies, despite reporting the <span class="gold">highest median turnover</span> (₹37,649 Cr in 2025), have some of the weakest environmental disclosures. Their energy footprint is genuinely small — these are office-based operations — but that doesn't excuse the near-zero reporting on financed emissions, which is where their real environmental impact lies.</p>
+      <p>Conversely, the agriculture & food sector, with a modest 27 filers, reports the <span class="green">highest renewable energy share at 82%</span>. Biomass and agricultural waste-to-energy pathways give this sector a structural advantage that manufacturing and energy companies spend billions trying to replicate.</p>
+    </div>
+
+    <div class="step" data-step="sectors-3">
+      <p>Construction & infrastructure stands out for the wrong reasons: <span class="highlight">73 worker fatalities</span> in 2025 alone — more than any other sector. The industry's reliance on contract labor, hazardous working conditions, and historically weak safety cultures creates a persistent human cost that BRSR data is now making visible.</p>
+      <p>IT & Technology, meanwhile, presents a paradox: employee fatalities have risen from 0 to 7 over three years in what should be the safest sector. The numbers are small, but the trajectory warrants investigation — are these commuting accidents, mental health crises, or reporting artifacts?</p>
+    </div>
+
+  </div>
+
+  <div class="vis-column">
+    <div class="vis-sticky">
+      <svg id="vis-sectors" width="480" height="400"></svg>
+    </div>
+  </div>
+</div>
+
+<div class="section-sep">⁕ ⁕ ⁕</div>
+
+<!-- ═══════════════ SECTION 5: SAFETY ═══════════════ -->
+<div class="scroll-section" id="section-safety">
+  <div class="text-column">
+
+    <div class="step" data-step="safety-1">
+      <h2>The Human Cost</h2>
+      <p>Behind every data point in this report is a human reality. Nowhere is this more apparent than in workplace safety. In 2025, BRSR-reporting companies collectively disclosed <span class="highlight">96 employee fatalities</span> and <span class="highlight">263 worker fatalities</span>.</p>
+      <p>The distinction between "employee" and "worker" is crucial. Employees are permanent staff; workers include contract labor, temporary hires, and gig workers. The fact that worker fatalities outnumber employee fatalities by nearly 3:1 reveals the two-tier safety reality of Indian industry.</p>
+    </div>
+
+    <div class="step" data-step="safety-2">
+      <span class="big-number">263 <span class="unit">worker deaths</span></span>
+      <p>Contract workers operate in the same facilities, often doing the same tasks, but with weaker safety training, less protective equipment, and fewer avenues for reporting hazards. The BRSR data doesn't just document fatalities — it documents a structural inequality in who bears physical risk in Indian industry.</p>
+      <p>The good news: total fatalities have declined from 395 in 2023 to 359 in 2025. The bad news: <span class="gold">worker fatalities in construction haven't budged</span> — 72 in 2023, 70 in 2024, 73 in 2025. The sector is growing, and its safety record isn't keeping pace.</p>
+    </div>
+
+    <div class="step" data-step="safety-3">
+      <h3>The LTIFR puzzle</h3>
+      <p>Lost Time Injury Frequency Rate (LTIFR) — the standard global metric for workplace safety — shows a median of <span class="highlight">0.0 across nearly every sector</span>. This doesn't mean Indian workplaces are miraculously safe. It means LTIFR reporting is either not being done systematically, or companies are reporting only severe incidents.</p>
+      <p>International benchmarks provide context: global manufacturing LTIFR averages 3.0-5.0 per million hours worked. India's reported median of 0.0 is statistically implausible for a universe of 1,200+ companies and suggests a fundamental measurement gap that SEBI will need to address in future BRSR revisions.</p>
+    </div>
+
+  </div>
+
+  <div class="vis-column">
+    <div class="vis-sticky">
+      <svg id="vis-safety" width="480" height="400"></svg>
+    </div>
+  </div>
+</div>
+
+<div class="section-sep">⁕ ⁕ ⁕</div>
+
+<!-- ═══════════════ SECTION 6: GENDER ═══════════════ -->
+<div class="scroll-section" id="section-gender">
+  <div class="text-column">
+
+    <div class="step" data-step="gender-1">
+      <h2>The Gender Lens</h2>
+      <p>In 2025, BRSR-reporting companies employed a total of <span class="highlight">1.81 million women</span> across 1,156 reporting entities. This is the first time India has had a comprehensive, standardized dataset on female workforce participation across listed companies.</p>
+      <p>The distribution is starkly uneven. IT & Technology accounts for <span class="gold">557,765 women</span> — nearly a third of the total — despite representing just 6% of filers. Financial services adds another 499,056. Together, these two service sectors employ 58% of all women reported in the BRSR universe.</p>
+    </div>
+
+    <div class="step" data-step="gender-2">
+      <h3>The factory floor gap</h3>
+      <p>Manufacturing, with 570 filers, reports only 231,588 women. Construction & infrastructure — 44 companies — reports just <span class="highlight">6,200 women total</span>. That's roughly 141 women per company, in an industry that employs millions.</p>
+      <p>The POSH (Prevention of Sexual Harassment) data tells a parallel story. IT companies reported 413 complaints across 74 companies. Financial services reported 589 across 137 companies. Construction? Just 17 complaints across 44 companies. The question isn't whether construction has fewer incidents — it's whether the mechanisms for reporting exist at all.</p>
+    </div>
+
+    <div class="step" data-step="gender-3">
+      <p>The aggregate POSH trajectory is actually encouraging: from 2 complaints in 2023 to <span class="green">2,009 in 2025</span>. This explosion doesn't signal a worsening workplace — it signals that grievance mechanisms are being built, awareness is being raised, and women are becoming more willing to report. Every complaint filed is a system working as intended.</p>
+      <p class="annotation">Global benchmark: the UK reported over 40,000 workplace harassment complaints in 2023 across a workforce of 33 million. India's 2,009 complaints across a BRSR workforce that likely exceeds 15 million suggests significant under-reporting persists.</p>
+    </div>
+
+  </div>
+
+  <div class="vis-column">
+    <div class="vis-sticky">
+      <svg id="vis-gender" width="480" height="400"></svg>
+    </div>
+  </div>
+</div>
+
+<div class="section-sep">⁕ ⁕ ⁕</div>
+
+<!-- ═══════════════ SECTION 7: ASSURANCE GAP ═══════════════ -->
+<div class="interlude">
+  <h2>0%</h2>
+  <div class="divider"></div>
+  <p>That is the rate of independent external assurance across the entire BRSR reporting universe. Not a single sector has achieved meaningful third-party verification of its sustainability data. India's ESG disclosure ecosystem is, for now, entirely self-certified. This is the single largest credibility gap in the framework — and the one SEBI will most urgently need to close.</p>
+</div>
+
+<div class="section-sep">⁕ ⁕ ⁕</div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="brand-footer">AA Impact Inc.</div>
+  <p>This assessment is based on analysis of 3,638 BRSR filings submitted by 1,605 unique Indian listed companies between 2022 and 2025. Data was sourced from public SEBI disclosures and processed using standardized sector classification and metric aggregation methodologies.</p>
+  <div class="divider"></div>
+  <p>© 2025 AA Impact Inc. All rights reserved.</p>
+</footer>
+
+<!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  // ── Intersection Observer for scroll-triggered steps ──
+  var steps = document.querySelectorAll('.step');
+  var currentStep = null;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.4) {
+        // Deactivate previous
+        steps.forEach(function(s) { s.classList.remove('is-active'); });
+        entry.target.classList.add('is-active');
+
+        var stepId = entry.target.getAttribute('data-step');
+        if (stepId !== currentStep) {
+          currentStep = stepId;
+          updateVisualization(stepId);
+        }
+      }
+    });
+  }, {
+    threshold: [0.4, 0.6],
+    rootMargin: '-20% 0px -20% 0px'
+  });
+
+  steps.forEach(function(step) { observer.observe(step); });
+
+  // Activate first step on load
+  if (steps.length > 0) {
+    steps[0].classList.add('is-active');
+    currentStep = steps[0].getAttribute('data-step');
+  }
+
+  // ── VISUALIZATION: Filing Growth ──
+  var filingData = [
+    { year: 2022, count: 173 },
+    { year: 2023, count: 1074 },
+    { year: 2024, count: 1176 },
+    { year: 2025, count: 1214 }
+  ];
+
+  var intlData = [
+    { country: 'EU CSRD', count: 50000, color: '#94a3b8' },
+    { country: 'Japan', count: 4000, color: '#94a3b8' },
+    { country: 'China', count: 1400, color: '#94a3b8' },
+    { country: 'India', count: 1214, color: '#C5A55A' }
+  ];
+
+  function buildFilingVis() {
+    var svg = d3.select('#vis-filing');
+    svg.selectAll('*').remove();
+
+    var w = 480, h = 400;
+    var margin = { top: 40, right: 30, bottom: 50, left: 60 };
+    var iw = w - margin.left - margin.right;
+    var ih = h - margin.top - margin.bottom;
+
+    var g = svg.append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+    // Title
+    svg.append('text').attr('class', 'vis-title')
+      .attr('x', margin.left).attr('y', 24)
+      .text('BRSR Filing Growth');
+
+    // Scales
+    var x = d3.scaleBand().domain(filingData.map(function(d){ return d.year; })).range([0, iw]).padding(0.35);
+    var y = d3.scaleLinear().domain([0, 1400]).range([ih, 0]);
+
+    // Grid
+    g.selectAll('.grid-line')
+      .data(y.ticks(5))
+      .enter().append('line')
+      .attr('class', 'grid')
+      .attr('x1', 0).attr('x2', iw)
+      .attr('y1', function(d){ return y(d); })
+      .attr('y2', function(d){ return y(d); });
+
+    // Axes
+    g.append('g').attr('class', 'axis').attr('transform', 'translate(0,' + ih + ')')
+      .call(d3.axisBottom(x).tickSize(0)).select('.domain').remove();
+
+    g.append('g').attr('class', 'axis')
+      .call(d3.axisLeft(y).ticks(5).tickSize(-4)).select('.domain').remove();
+
+    // Bars
+    var bars = g.selectAll('.bar')
+      .data(filingData)
+      .enter().append('rect')
+      .attr('class', 'bar-gold bar-enter')
+      .attr('x', function(d){ return x(d.year); })
+      .attr('width', x.bandwidth())
+      .attr('y', ih)
+      .attr('height', 0)
+      .attr('rx', 2);
+
+    // Labels
+    var labels = g.selectAll('.bar-label')
+      .data(filingData)
+      .enter().append('text')
+      .attr('class', 'vis-label')
+      .attr('text-anchor', 'middle')
+      .attr('x', function(d){ return x(d.year) + x.bandwidth()/2; })
+      .attr('y', ih)
+      .attr('opacity', 0)
+      .text(function(d){ return d.count.toLocaleString(); });
+
+    // Store refs
+    svg.node().__bars = bars;
+    svg.node().__labels = labels;
+    svg.node().__g = g;
+    svg.node().__x = x;
+    svg.node().__y = y;
+    svg.node().__ih = ih;
+    svg.node().__iw = iw;
+    svg.node().__margin = margin;
+  }
+
+  function animateFilingBars(upTo) {
+    var svg = d3.select('#vis-filing');
+    var node = svg.node();
+    if (!node.__bars) return;
+
+    var y = node.__y;
+    var ih = node.__ih;
+
+    node.__bars
+      .transition().duration(800).ease(d3.easeCubicOut)
+      .attr('y', function(d, i) { return i < upTo ? y(d.count) : ih; })
+      .attr('height', function(d, i) { return i < upTo ? ih - y(d.count) : 0; });
+
+    node.__labels
+      .transition().duration(800).ease(d3.easeCubicOut)
+      .attr('y', function(d, i) { return i < upTo ? y(d.count) - 8 : ih; })
+      .attr('opacity', function(d, i) { return i < upTo ? 1 : 0; });
+  }
+
+  function showInternationalComparison() {
+    var svg = d3.select('#vis-filing');
+    var node = svg.node();
+    if (!node.__g) return;
+    var g = node.__g;
+    var ih = node.__ih;
+    var iw = node.__iw;
+    var margin = node.__margin;
+
+    // Transition to international view
+    svg.select('.vis-title').transition().duration(400).text('Global Comparison');
+
+    // Clear bars
+    g.selectAll('.bar-gold, .bar-label, .grid-line, .axis').transition().duration(400).attr('opacity', 0);
+
+    setTimeout(function() {
+      g.selectAll('*').remove();
+
+      var x = d3.scaleBand().domain(intlData.map(function(d){ return d.country; })).range([0, iw]).padding(0.3);
+      var y = d3.scaleLinear().domain([0, 55000]).range([ih, 0]);
+
+      g.append('g').attr('class', 'axis').attr('transform', 'translate(0,' + ih + ')')
+        .call(d3.axisBottom(x).tickSize(0)).select('.domain').remove();
+
+      g.selectAll('.intl-bar')
+        .data(intlData)
+        .enter().append('rect')
+        .attr('x', function(d){ return x(d.country); })
+        .attr('width', x.bandwidth())
+        .attr('y', ih)
+        .attr('height', 0)
+        .attr('rx', 2)
+        .attr('fill', function(d){ return d.color; })
+        .transition().duration(800).ease(d3.easeCubicOut)
+        .attr('y', function(d){ return y(d.count); })
+        .attr('height', function(d){ return ih - y(d.count); });
+
+      g.selectAll('.intl-label')
+        .data(intlData)
+        .enter().append('text')
+        .attr('class', 'vis-label')
+        .attr('text-anchor', 'middle')
+        .attr('x', function(d){ return x(d.country) + x.bandwidth()/2; })
+        .attr('y', function(d){ return y(d.count) - 8; })
+        .attr('opacity', 0)
+        .text(function(d){ return d.count >= 1000 ? (d.count/1000).toFixed(d.count >= 10000 ? 0 : 1) + 'K' : d.count; })
+        .transition().delay(400).duration(400)
+        .attr('opacity', 1);
+
+    }, 500);
+  }
+
+  // ── VISUALIZATION: Principles Radar ──
+  function buildPrinciplesVis() {
+    var svg = d3.select('#vis-principles');
+    svg.selectAll('*').remove();
+    var w = 480, h = 400;
+    var cx = w/2, cy = h/2 + 10, r = 140;
+
+    svg.append('text').attr('class', 'vis-title')
+      .attr('x', 20).attr('y', 24)
+      .text('NGRBC Principle Adoption');
+
+    var principles = [
+      { id: 'P1', name: 'Ethics', score: 92 },
+      { id: 'P2', name: 'Products', score: 88 },
+      { id: 'P3', name: 'Wellbeing', score: 85 },
+      { id: 'P4', name: 'Stakeholders', score: 82 },
+      { id: 'P5', name: 'Human Rights', score: 78 },
+      { id: 'P6', name: 'Environment', score: 72 },
+      { id: 'P7', name: 'Policy', score: 15 },
+      { id: 'P8', name: 'Inclusion', score: 35 },
+      { id: 'P9', name: 'Consumer', score: 42 }
+    ];
+
+    var angleSlice = Math.PI * 2 / principles.length;
+
+    // Background circles
+    [0.25, 0.5, 0.75, 1].forEach(function(level) {
+      svg.append('circle')
+        .attr('cx', cx).attr('cy', cy).attr('r', r * level)
+        .attr('fill', 'none').attr('stroke', '#e8e4dc').attr('stroke-dasharray', '2,4');
+    });
+
+    // Axis lines
+    principles.forEach(function(d, i) {
+      var angle = angleSlice * i - Math.PI/2;
+      svg.append('line')
+        .attr('x1', cx).attr('y1', cy)
+        .attr('x2', cx + r * Math.cos(angle))
+        .attr('y2', cy + r * Math.sin(angle))
+        .attr('stroke', '#e8e4dc').attr('stroke-width', 1);
+
+      // Labels
+      var lx = cx + (r + 24) * Math.cos(angle);
+      var ly = cy + (r + 24) * Math.sin(angle);
+      svg.append('text')
+        .attr('class', 'vis-label')
+        .attr('x', lx).attr('y', ly)
+        .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
+        .attr('font-size', '11px')
+        .text(d.id);
+    });
+
+    // Data polygon
+    var radarLine = d3.lineRadial()
+      .radius(function(d){ return r * d.score / 100; })
+      .angle(function(d, i){ return i * angleSlice; })
+      .curve(d3.curveCardinalClosed.tension(0.6));
+
+    var path = svg.append('path')
+      .datum(principles)
+      .attr('transform', 'translate(' + cx + ',' + cy + ') rotate(-90)')
+      .attr('d', radarLine)
+      .attr('fill', 'rgba(197, 165, 90, 0.15)')
+      .attr('stroke', '#C5A55A')
+      .attr('stroke-width', 2)
+      .attr('opacity', 0);
+
+    // Dots
+    var dots = svg.selectAll('.radar-dot')
+      .data(principles)
+      .enter().append('circle')
+      .attr('cx', function(d, i) { return cx + r * (d.score/100) * Math.cos(angleSlice * i - Math.PI/2); })
+      .attr('cy', function(d, i) { return cy + r * (d.score/100) * Math.sin(angleSlice * i - Math.PI/2); })
+      .attr('r', 4)
+      .attr('fill', function(d) { return d.score < 50 ? '#e74c3c' : '#C5A55A'; })
+      .attr('opacity', 0);
+
+    svg.node().__path = path;
+    svg.node().__dots = dots;
+  }
+
+  function animatePrinciples(showLaggards) {
+    var svg = d3.select('#vis-principles');
+    var node = svg.node();
+    if (!node.__path) return;
+
+    node.__path.transition().duration(1000).attr('opacity', 1);
+    node.__dots.transition().duration(800).delay(function(d,i){ return i * 80; })
+      .attr('opacity', 1)
+      .attr('r', function(d) { return showLaggards && d.score < 50 ? 7 : 4; });
+  }
+
+  // ── VISUALIZATION: Sector Treemap ──
+  function buildSectorVis() {
+    var svg = d3.select('#vis-sectors');
+    svg.selectAll('*').remove();
+    var w = 480, h = 400;
+
+    svg.append('text').attr('class', 'vis-title')
+      .attr('x', 20).attr('y', 24)
+      .text('Sector Distribution (2025 Filers)');
+
+    var sectorData = [
+      { name: 'Manufacturing', count: 570, color: '#0F2540' },
+      { name: 'Financial\nServices', count: 139, color: '#1a3a5c' },
+      { name: 'IT & Tech', count: 76, color: '#26A69A' },
+      { name: 'Construction', count: 44, color: '#C5A55A' },
+      { name: 'Pharma', count: 44, color: '#81C784' },
+      { name: 'Energy', count: 43, color: '#e8a838' },
+      { name: 'Trading', count: 35, color: '#94a3b8' },
+      { name: 'Real Estate', count: 29, color: '#b8a394' },
+      { name: 'Agri & Food', count: 27, color: '#4CAF50' },
+      { name: 'Transport', count: 25, color: '#78909c' }
+    ];
+
+    var root = d3.hierarchy({ children: sectorData }).sum(function(d){ return d.count; });
+    d3.treemap().size([w - 40, h - 60]).padding(3).round(true)(root);
+
+    var cells = svg.selectAll('.cell')
+      .data(root.leaves())
+      .enter().append('g')
+      .attr('transform', function(d){ return 'translate(' + (d.x0 + 20) + ',' + (d.y0 + 40) + ')'; });
+
+    cells.append('rect')
+      .attr('width', function(d){ return d.x1 - d.x0; })
+      .attr('height', function(d){ return d.y1 - d.y0; })
+      .attr('fill', function(d){ return d.data.color; })
+      .attr('rx', 3)
+      .attr('opacity', 0);
+
+    cells.each(function(d) {
+      var cellW = d.x1 - d.x0;
+      var cellH = d.y1 - d.y0;
+      if (cellW > 50 && cellH > 30) {
+        d3.select(this).append('text')
+          .attr('x', 8).attr('y', 20)
+          .attr('fill', 'white').attr('font-size', cellW > 100 ? '13px' : '10px')
+          .attr('font-weight', '600').attr('opacity', 0)
+          .text(d.data.name.replace('\n', ' '));
+        d3.select(this).append('text')
+          .attr('x', 8).attr('y', cellW > 100 ? 38 : 32)
+          .attr('fill', 'rgba(255,255,255,0.7)').attr('font-size', '11px').attr('opacity', 0)
+          .text(d.data.count);
+      }
+    });
+
+    svg.node().__cells = cells;
+  }
+
+  function animateSectors() {
+    var svg = d3.select('#vis-sectors');
+    var node = svg.node();
+    if (!node.__cells) return;
+
+    node.__cells.selectAll('rect')
+      .transition().duration(800).delay(function(d,i){ return i * 60; })
+      .ease(d3.easeCubicOut)
+      .attr('opacity', 0.9);
+
+    node.__cells.selectAll('text')
+      .transition().duration(600).delay(function(d,i){ return 300 + i * 60; })
+      .attr('opacity', 1);
+  }
+
+  // ── VISUALIZATION: Safety ──
+  function buildSafetyVis() {
+    var svg = d3.select('#vis-safety');
+    svg.selectAll('*').remove();
+    var w = 480, h = 400;
+    var margin = { top: 40, right: 30, bottom: 50, left: 60 };
+    var iw = w - margin.left - margin.right;
+    var ih = h - margin.top - margin.bottom;
+    var g = svg.append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+    svg.append('text').attr('class', 'vis-title')
+      .attr('x', margin.left).attr('y', 24)
+      .text('Workplace Fatalities');
+
+    var data = [
+      { year: 2023, employees: 124, workers: 349 },
+      { year: 2024, employees: 87, workers: 290 },
+      { year: 2025, employees: 96, workers: 263 }
+    ];
+
+    var x = d3.scaleBand().domain(data.map(function(d){ return d.year; })).range([0, iw]).padding(0.3);
+    var y = d3.scaleLinear().domain([0, 400]).range([ih, 0]);
+
+    g.append('g').attr('class', 'axis').attr('transform', 'translate(0,' + ih + ')')
+      .call(d3.axisBottom(x).tickSize(0)).select('.domain').remove();
+
+    g.append('g').attr('class', 'axis')
+      .call(d3.axisLeft(y).ticks(5).tickSize(-4)).select('.domain').remove();
+
+    var subX = d3.scaleBand().domain(['employees', 'workers']).range([0, x.bandwidth()]).padding(0.1);
+
+    data.forEach(function(d) {
+      g.append('rect')
+        .attr('class', 'safety-bar')
+        .attr('x', x(d.year) + subX('employees'))
+        .attr('width', subX.bandwidth())
+        .attr('y', ih).attr('height', 0)
+        .attr('fill', '#C5A55A').attr('rx', 2);
+
+      g.append('rect')
+        .attr('class', 'safety-bar')
+        .attr('x', x(d.year) + subX('workers'))
+        .attr('width', subX.bandwidth())
+        .attr('y', ih).attr('height', 0)
+        .attr('fill', '#0F2540').attr('rx', 2);
+    });
+
+    // Legend
+    g.append('rect').attr('x', iw - 140).attr('y', -10).attr('width', 12).attr('height', 12).attr('fill', '#C5A55A').attr('rx', 2);
+    g.append('text').attr('class', 'vis-label').attr('x', iw - 122).attr('y', 1).text('Employees');
+    g.append('rect').attr('x', iw - 60).attr('y', -10).attr('width', 12).attr('height', 12).attr('fill', '#0F2540').attr('rx', 2);
+    g.append('text').attr('class', 'vis-label').attr('x', iw - 42).attr('y', 1).text('Workers');
+
+    svg.node().__safetyG = g;
+    svg.node().__safetyData = data;
+    svg.node().__safetyX = x;
+    svg.node().__safetyY = y;
+    svg.node().__safetySubX = subX;
+    svg.node().__safetyIH = ih;
+  }
+
+  function animateSafety() {
+    var svg = d3.select('#vis-safety');
+    var node = svg.node();
+    if (!node.__safetyG) return;
+    var g = node.__safetyG;
+    var data = node.__safetyData;
+    var x = node.__safetyX;
+    var y = node.__safetyY;
+    var subX = node.__safetySubX;
+    var ih = node.__safetyIH;
+
+    var bars = g.selectAll('.safety-bar');
+    var idx = 0;
+    data.forEach(function(d) {
+      bars.filter(function(dd, i) { return i === idx; })
+        .transition().duration(800).delay(idx * 100)
+        .attr('y', y(d.employees)).attr('height', ih - y(d.employees));
+      bars.filter(function(dd, i) { return i === idx + 1; })
+        .transition().duration(800).delay(idx * 100 + 100)
+        .attr('y', y(d.workers)).attr('height', ih - y(d.workers));
+      idx += 2;
+    });
+  }
+
+  // ── VISUALIZATION: Gender ──
+  function buildGenderVis() {
+    var svg = d3.select('#vis-gender');
+    svg.selectAll('*').remove();
+    var w = 480, h = 400;
+    var margin = { top: 40, right: 30, bottom: 80, left: 60 };
+    var iw = w - margin.left - margin.right;
+    var ih = h - margin.top - margin.bottom;
+    var g = svg.append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+    svg.append('text').attr('class', 'vis-title')
+      .attr('x', margin.left).attr('y', 24)
+      .text('Female Workforce by Sector (2025)');
+
+    var data = [
+      { sector: 'IT & Tech', count: 557765 },
+      { sector: 'Financial', count: 499056 },
+      { sector: 'Manufacturing', count: 231588 },
+      { sector: 'Pharma', count: 109310 },
+      { sector: 'Trading', count: 65643 },
+      { sector: 'Transport', count: 40075 },
+      { sector: 'Agri & Food', count: 23314 },
+      { sector: 'Energy', count: 14520 },
+      { sector: 'Construction', count: 6200 },
+      { sector: 'Real Estate', count: 2729 }
+    ];
+
+    var x = d3.scaleLinear().domain([0, 600000]).range([0, iw]);
+    var y = d3.scaleBand().domain(data.map(function(d){ return d.sector; })).range([0, ih]).padding(0.25);
+
+    g.append('g').attr('class', 'axis')
+      .call(d3.axisLeft(y).tickSize(0)).select('.domain').remove();
+
+    var bars = g.selectAll('.gender-bar')
+      .data(data)
+      .enter().append('rect')
+      .attr('x', 0)
+      .attr('y', function(d){ return y(d.sector); })
+      .attr('width', 0)
+      .attr('height', y.bandwidth())
+      .attr('fill', function(d, i){ return i < 2 ? '#C5A55A' : (i < 5 ? '#0F2540' : '#94a3b8'); })
+      .attr('rx', 2);
+
+    var labels = g.selectAll('.gender-label')
+      .data(data)
+      .enter().append('text')
+      .attr('class', 'vis-label')
+      .attr('x', 4)
+      .attr('y', function(d){ return y(d.sector) + y.bandwidth()/2 + 4; })
+      .attr('opacity', 0)
+      .text(function(d){ return d.count >= 1000 ? Math.round(d.count/1000) + 'K' : d.count; });
+
+    svg.node().__genderBars = bars;
+    svg.node().__genderLabels = labels;
+    svg.node().__genderX = x;
+  }
+
+  function animateGender() {
+    var svg = d3.select('#vis-gender');
+    var node = svg.node();
+    if (!node.__genderBars) return;
+    var x = node.__genderX;
+
+    node.__genderBars
+      .transition().duration(800).delay(function(d,i){ return i * 60; })
+      .ease(d3.easeCubicOut)
+      .attr('width', function(d){ return x(d.count); });
+
+    node.__genderLabels
+      .transition().duration(600).delay(function(d,i){ return 400 + i * 60; })
+      .attr('x', function(d){ return x(d.count) + 8; })
+      .attr('opacity', 1);
+  }
+
+  // ── Build all visualizations on load ──
+  buildFilingVis();
+  buildPrinciplesVis();
+  buildSectorVis();
+  buildSafetyVis();
+  buildGenderVis();
+
+  // Trigger initial animation
+  setTimeout(function() { animateFilingBars(1); }, 500);
+
+  // ── Update visualization based on current step ──
+  function updateVisualization(stepId) {
+    switch(stepId) {
+      case 'filing-1':
+        buildFilingVis();
+        setTimeout(function(){ animateFilingBars(1); }, 200);
+        break;
+      case 'filing-2':
+        animateFilingBars(4);
+        break;
+      case 'filing-3':
+        showInternationalComparison();
+        break;
+      case 'filing-4':
+        // Keep international view
+        break;
+      case 'principles-1':
+        buildPrinciplesVis();
+        setTimeout(function(){ animatePrinciples(false); }, 200);
+        break;
+      case 'principles-2':
+        animatePrinciples(true);
+        break;
+      case 'principles-3':
+        animatePrinciples(true);
+        break;
+      case 'sectors-1':
+        buildSectorVis();
+        setTimeout(function(){ animateSectors(); }, 200);
+        break;
+      case 'sectors-2':
+      case 'sectors-3':
+        // Treemap stays visible
+        break;
+      case 'safety-1':
+        buildSafetyVis();
+        setTimeout(function(){ animateSafety(); }, 200);
+        break;
+      case 'safety-2':
+      case 'safety-3':
+        break;
+      case 'gender-1':
+        buildGenderVis();
+        setTimeout(function(){ animateGender(); }, 200);
+        break;
+      case 'gender-2':
+      case 'gender-3':
+        break;
+    }
+  }
+
+})();
+</script>
+
+</body>
+</html>
